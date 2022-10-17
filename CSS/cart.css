@@ -67,5 +67,12 @@ footer {
 
 body {
     font-family: Arial;
-  }
+}
+
+  
+.user-profile {
+    padding: 0 100px 0 100px;
+    max-width:100%;
+    justify-content: center;
+}
 

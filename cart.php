@@ -21,7 +21,7 @@ if(isset($_GET['logout'])){
 <head>
 <title>Phones & Accessories Hub</title>
 <meta charset=“utf-8”> 
-<link href="./CSS/index.css" rel="stylesheet" >
+<link href="./CSS/cart.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -31,13 +31,12 @@ if(isset($_GET['logout'])){
 	<nav>
 		<div class="navbar">
 			<ul>
-				<li><a href="phone.php">Phones</a></li>
+                <li><a href="phone.php">Phones</a></li>
 				<li><a href="airpod.php">Airpod</a></li>
 				<li><a href="smartwatch.php">Smartwatch</a></li>
 				<li><a href="cases.php">Cases</a></li>
 			</ul>
 			<div class="icon">
-				<!--search bar still required to edit-->
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php"><div class="fas fa-shopping-cart" id="cart-btn"></div></a>
@@ -45,8 +44,7 @@ if(isset($_GET['logout'])){
 			</div>
 		</div>
 	</nav>
-	<main>
-        <div class="user-profile">
+    <div class="user-profile">
             <?php
             $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
             if(mysqli_num_rows($select_user) > 0){
@@ -61,18 +59,9 @@ if(isset($_GET['logout'])){
             <a href="register.php" class="option-btn">register</a>
             <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are your sure you want to logout?');" class="delete-btn">logout</a>
             </div>
-        </div>
-		<div class="div1">
-			<a href="#"><img src="./Image/iPhone14_homepage.jpeg"></a>
-			<!--require edit-->	
-		</div>
-		<div class="div2">
-			<a href="#"><img src="./Image/airpods_homepage.jpg"></a>
-			<a href="#"><img src="./Image/applewatch_homepage.jpg"></a>
-		</div>
-		<div class="div3">
-			<a href="#"><img src="./Image/phonecases_homepage.jpg"></a>
-		</div>
+    </div>
+	<main>
+		
 	</main>	
 	<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
