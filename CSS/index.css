@@ -53,6 +53,10 @@ header {
     text-align: center;
 }
 
+.icon {
+    padding-right: 100px
+}
+
 .cart {
     width: 40px;
     cursor: pointer;

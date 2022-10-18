@@ -36,11 +36,10 @@ if(isset($_GET['logout'])){
 				<li><a href="smartwatch.php">Smartwatch</a></li>
 				<li><a href="cases.php">Cases</a></li>
 			</ul>
-			<div class="icon">
+			<div class="icon" style="padding-right: 100px">
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php"><div class="fas fa-shopping-cart" id="cart-btn"></div></a>
-				<div class="fas fa-user" id="login-btn"></div>
 			</div>
 		</div>
 	</nav>
@@ -61,7 +60,6 @@ if(isset($_GET['logout'])){
             </div>
     </div>
 	<main>
-		
 	</main>	
 	<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
