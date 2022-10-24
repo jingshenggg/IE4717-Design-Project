@@ -37,10 +37,10 @@
 		</div>
 		<div class="div2">
 			<a href="airpod.php"><img src="./Image/airpodspro_homepage.jfif"></a>
-			<a href="smartwatch.php"><img src="./Image/applewatch_homepage1.jpg"></a>
+			<a href="smartwatch.php"><img src="./Image/applewatch_homepage.jpg"></a>
 		</div>
 		<div class="div3">
-			<a href="case.php"><img src="./Image/phonecases_homepage1.jpg"></a>
+			<a href="case.php"><img src="./Image/phonecases_homepage.jpg"></a>
 		</div>
 	</main>
 	<footer>
