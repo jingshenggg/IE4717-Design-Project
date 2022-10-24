@@ -73,6 +73,7 @@ include "setup_session.php";
     <div class="row">
       <div class="column">
         <h3>iPhone 14 Pro Leather Case with MagSafe</h3>
+        <h3>$59.00</h3>
         <form method="get" action="add_to_cart.php">
           <label><input type=submit class="btn" value="Add to cart" name="case1"></label>
         </form>
@@ -80,18 +81,21 @@ include "setup_session.php";
 
       <div class="column">
         <h3>iPhone 14 Clear Case with MagSafe</h3>
+        <h3>$49.00</h3>
         <form method="get" action="add_to_cart.php">
           <label><input type=submit class="btn" value="Add to cart" name="case2"></label>
         </form>
       </div>
       <div class="column">
         <h3>iPhone 14 Plus Silicone Case with MagSafe</h3>
+        <h3>$49.00</h3>
         <form method="get" action="add_to_cart.php">
           <label><input type=submit class="btn" value="Add to cart" name="case3"></label>
         </form>
       </div>
       <div class="column">
         <h3>iPhone 14 Pro Max Leather Case with MagSafe</h3>
+        <h3>$59.00</h3>
         <form method="get" action="add_to_cart.php">
           <label><input type=submit class="btn" value="Add to cart" name="case4"></label>
         </form>

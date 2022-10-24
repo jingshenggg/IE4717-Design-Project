@@ -21,10 +21,10 @@ CREATE TABLE product (
 
 SELECT "Filling product table" AS MESSAGE;
 INSERT INTO shop.product (product_id, product_name, product_price)
-    VALUES (NULL, "iPhone 14 Pro Leather Case with MagSafe", 10.00),
-    (NULL, "iPhone 14 Clear Case with MagSafe", 11.00),
-    (NULL, "iPhone 14 Plus Silicone Case with MagSafe", 12.00),
-    (NULL, "iPhone 14 Pro Max Leather Case with MagSafe", 13.00),
+    VALUES (NULL, "iPhone 14 Pro Leather Case with MagSafe", 59.00),
+    (NULL, "iPhone 14 Clear Case with MagSafe", 49.00),
+    (NULL, "iPhone 14 Plus Silicone Case with MagSafe", 49.00),
+    (NULL, "iPhone 14 Pro Max Leather Case with MagSafe", 59.00),
     (NULL, "Apple Watch 8", 399.00),
     (NULL, "Apple Watch SE", 249.00),
     (NULL, "Apple Watch Ultra", 799.00),

@@ -77,6 +77,7 @@ include "setup_session.php";
       <div class="row">
         <div class="column">
           <h3>Apple Watch 8</h3>
+          <h3>$399.00</h3>
           <form method="get" action="add_to_cart.php">
             <label><input type=submit class="btn" value="Add to cart" name="watch1"></label>
           </form>
@@ -84,18 +85,21 @@ include "setup_session.php";
 
         <div class="column">
           <h3>Apple Watch SE</h3>
+          <h3>$249.00</h3>
           <form method="get" action="add_to_cart.php">
             <label><input type=submit class="btn" value="Add to cart" name="watch2"></label>
           </form>
         </div>
         <div class="column">
           <h3>Apple Watch Ultra</h3>
+          <h3>$799.00</h3>
           <form method="get" action="add_to_cart.php">
             <label><input type=submit class="btn" value="Add to cart" name="watch3"></label>
           </form>
         </div>
         <div class="column">
           <h3>Apple Watch Hermes</h3>
+          <h3>$1579.00</h3>
           <form method="get" action="add_to_cart.php">
             <label><input type=submit class="btn" value="Add to cart" name="watch4"></label>
           </form>
