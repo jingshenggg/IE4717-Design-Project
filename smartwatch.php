@@ -1,117 +1,89 @@
-<?php
-
-include 'config.php';
-session_start();
-$user_id = $_SESSION['user_id'];
-
-if(!isset($user_id)){
-   header('location:login.php');
-};
-
-if(isset($_GET['logout'])){
-   unset($user_id);
-   session_destroy();
-   header('location:login.php');
-};
-
-?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>SmartWatches</title>
-  <meta charset = "uft-8">
-  <link href="./CSS/styles.css" rel="stylesheet" >
+  <meta charset="uft-8">
+  <link href="./CSS/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body>
-</style>
 
 <body>
-	<header>
-		<h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
-	</header>
-	<nav>
-		<div class="navbar">
-			<ul>
-                <li><a href="phone.php">Phones</a></li>
-				<li><a href="airpod.php">Airpod</a></li>
-				<li><a href="smartwatch.php">Smartwatch</a></li>
-				<li><a href="cases.php">Cases</a></li>
-			</ul>
-			<div class="icon" style="padding-right: 100px">
-				<input type="search" class="search-form" id="search-box" placeholder="search here...">
-				<label for="search-box" class="fas fa-search"></label>
-				<a href="cart.php"><div class="fas fa-shopping-cart" id="cart-btn"></div></a>
-			</div>
-		</div>
-	</nav>
-    <div class="user-profile">
-            <?php
-            $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-            if(mysqli_num_rows($select_user) > 0){
-                $fetch_user = mysqli_fetch_assoc($select_user);
-            };
-            ?>
+  </style>
 
-            <p> username : <span><?php echo $fetch_user['name']; ?></span> </p>
-            <p> email : <span><?php echo $fetch_user['email']; ?></span> </p>
-            <div class="flex">
-            <a href="login.php" class="btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-            <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are your sure you want to logout?');" class="delete-btn">logout</a>
-            </div>
+  <body>
+    <header>
+      <h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
+    </header>
+    <nav>
+      <div class="navbar">
+        <ul>
+          <li><a href="phone.php">Phone</a></li>
+          <li><a href="airpod.php">Airpod</a></li>
+          <li><a href="smartwatch.php">Smartwatch</a></li>
+          <li><a href="case.php">Case</a></li>
+        </ul>
+        <div class="icon" style="padding-right: 100px">
+          <input type="search" class="search-form" id="search-box" placeholder="search here...">
+          <label for="search-box" class="fas fa-search"></label>
+          <a href="cart.php">
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header">
+      <h1>SmartWatches</h1>
+      <p>Check out the latest Smartwatches</p>
     </div>
-<div class="header">
-  <h1>SmartWatches</h1>
-  <p>Check out the latest Smartwatches</p>
-</div>
 
-<!-- Photo Grid -->
-<div class="row"> 
-  <div class="column">
-    <img src="./Image/applewatch8.jpg" style="width:100%">
-	</div>
+    <!-- Photo Grid -->
+    <div class="row">
+      <div class="column">
+        <img src="./Image/applewatch8.jpg" style="width:100%">
+      </div>
 
-  <div class="column">
-    <img src="./Image/applewatchse.jpg" style="width:100%">
-	</div>
-	
-  <div class="column">
-    <img src="./Image/applewatchultra.jpg" style="width:100%">
-	</div>
+      <div class="column">
+        <img src="./Image/applewatchse.jpg" style="width:100%">
+      </div>
 
-  <div class="column">
-    <img src="./Image/hermes.jpg" style="width:100%">
-	</div>
+      <div class="column">
+        <img src="./Image/applewatchultra.jpg" style="width:100%">
+      </div>
 
-</div>
+      <div class="column">
+        <img src="./Image/hermes.jpg" style="width:100%">
+      </div>
 
-<!-- buttons and text -->
-<div class="row"> 
-  <div class="column">
-  	<h3>Apple Watch 8</h3>
-	<button class="btn">Buy</button>
-	</div>
-  
-   <div class="column">
-	<h3>Apple Watch SE</h3>
-	<button class="btn">Buy</button>
-	</div>
-   <div class="column">
-	<h3>Apple Watch Ultra</h3>
-	<button class="btn">Buy</button>
+    </div>
 
-	</div>
-  <div class="column">
-  	<h3>Apple Watch Hermes</h3>
-	<button class="btn">Buy</button>
-	</div>
-</div>	
-  
-<footer>
-  <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
-<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
-</footer>
-</body>
+    <!-- buttons and text -->
+    <div class="row">
+      <div class="column">
+        <h3>Apple Watch 8</h3>
+        <button class="btn">Buy</button>
+      </div>
+
+      <div class="column">
+        <h3>Apple Watch SE</h3>
+        <button class="btn">Buy</button>
+      </div>
+      <div class="column">
+        <h3>Apple Watch Ultra</h3>
+        <button class="btn">Buy</button>
+
+      </div>
+      <div class="column">
+        <h3>Apple Watch Hermes</h3>
+        <button class="btn">Buy</button>
+      </div>
+    </div>
+
+    <footer>
+      <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
+      <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
+    </footer>
+  </body>
+
 </html>

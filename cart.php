@@ -1,29 +1,29 @@
 <?php
-
-include 'config.php';
-session_start();
-$user_id = $_SESSION['user_id'];
-
-if(!isset($user_id)){
-   header('location:login.php');
-};
-
-if(isset($_GET['logout'])){
-   unset($user_id);
-   session_destroy();
-   header('location:login.php');
-};
-
+include "db_connect.php";
+include "setup_session.php";
+if (isset($_GET['empty'])) {
+	unset($_SESSION['cart']);
+	header('location: ' . $_SERVER['PHP_SELF']);
+	exit();
+}
+if (isset($_GET['plus'])) {
+	$_SESSION['cart'][$_GET['plus']]++;
+}
+if (isset($_GET['minus'])) {
+	$_SESSION['cart'][$_GET['minus']]--;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Phones & Accessories Hub</title>
-<meta charset=“utf-8”> 
-<link href="./CSS/cart.css" rel="stylesheet" >
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<title>Phones & Accessories Hub</title>
+	<meta charset=“utf-8”>
+	<link href="./CSS/cart.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
 	<header>
 		<h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
@@ -31,39 +31,97 @@ if(isset($_GET['logout'])){
 	<nav>
 		<div class="navbar">
 			<ul>
-                <li><a href="phone.php">Phones</a></li>
+				<li><a href="phone.php">Phone</a></li>
 				<li><a href="airpod.php">Airpod</a></li>
 				<li><a href="smartwatch.php">Smartwatch</a></li>
-				<li><a href="cases.php">Cases</a></li>
+				<li><a href="case.php">Case</a></li>
 			</ul>
 			<div class="icon" style="padding-right: 100px">
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
-				<a href="cart.php"><div class="fas fa-shopping-cart" id="cart-btn"></div></a>
+				<a href="cart.php">
+					<div class="fas fa-shopping-cart" id="cart-btn"></div>
+				</a>
 			</div>
 		</div>
 	</nav>
-    <div class="user-profile">
-            <?php
-            $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-            if(mysqli_num_rows($select_user) > 0){
-                $fetch_user = mysqli_fetch_assoc($select_user);
-            };
-            ?>
-
-            <p> username : <span><?php echo $fetch_user['name']; ?></span> </p>
-            <p> email : <span><?php echo $fetch_user['email']; ?></span> </p>
-            <div class="flex">
-            <a href="login.php" class="btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-            <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are your sure you want to logout?');" class="delete-btn">logout</a>
-            </div>
-    </div>
 	<main>
-	</main>	
+		<p class="centeredparagraph">
+			<?php
+			$total = 0;
+			echo '<span class="cc_cart_items">';
+			for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+				$total += $_SESSION['cart'][$i];
+			}
+			if ($total == 1) {
+				echo 'Your shopping cart contains ' . $total . " item.";
+			} elseif ($total > 1) {
+				echo 'Your shopping cart contains ' . $total . " items.";
+			} else {
+				echo 'Your shopping cart is empty.';
+				displayEmpty();
+				return;
+			}
+			echo '</span>';
+			?>
+		</p>
+		<div class="cc_menu_wrapper">
+			<table class="cc_table">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Unit Price</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php
+					$total = 0;
+					$sql = "SELECT case_name, case_price FROM shop.case1";
+					if (!$result = mysqli_query($conn, $sql)) {
+						echo "Something went wrong when fetching data from database: " . mysqli_error($conn);
+					}
+					for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+						$row = mysqli_fetch_assoc($result);
+						if ($_SESSION['cart'][$i] > 0) {
+							echo "<tr>";
+							echo "<td align='center'>" . $row['case_name'] . "</td>";
+							echo '<td align="center"><a href="' . "?minus=" . $i . '"><img src="minus_symbol.png" class="cc_minus"></a>';
+							echo $_SESSION["cart"][$i];
+							echo '<a href="' . "?plus=" . $i . '"><img src="plus_symbol.png" class="cc_plus"></a>';
+							echo "<td align='center'>$" . $row['case_price'] . "</td>";
+							echo "</tr>";
+							$total = $total + (float)$row['case_price'] * (int)$_SESSION['cart'][$i];
+						}
+					}
+					echo "<tr>";
+					echo "<td colspan=2 align='left' style='padding-left:35px;font-size:20px; font-weight:bold;'>Total price </td>";
+					echo "<td align='center' style='font-size:20px;font-weight:bold;'>$" . number_format($total, 2) . "</td>";
+					echo "</tr>";
+					?>
+				</tbody>
+			</table>
+			<p class="centeredparagraph"><a href="cart.php" class="cc_links" style="margin-right:13%;">Continue to checkout</a>
+				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
+			</p>
+		</div>
+	</main>
 	<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
-	<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
+		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
 	</footer>
 </body>
+
 </html>
+
+
+<?php
+    function displayEmpty(){
+        echo '<p class="centeredparagraph"><a href="index.php" class="cc_empty_links">Continue shopping</a>';
+		echo '<footer>
+		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
+		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
+	 	 </footer>';
+    }
+?>

@@ -1,3 +1,7 @@
+<?php
+include "setup_session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,75 +31,42 @@
           <input type="search" class="search-form" id="search-box" placeholder="search here...">
           <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn">
+              <?php
+              $total = 0;
+              for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+                if ($_SESSION['cart'][$i] > 0) {
+                  $total += $_SESSION['cart'][$i];
+                }
+              }
+              echo $total;
+              ?>
+            </div>
           </a>
         </div>
       </div>
     </nav>
     <div class="header">
-      <h1>Phones</h1>
-      <p>Check out the latest appple phones</p>
+      <h1>Cases</h1>
+      <p>Check out the latest cases</p>
     </div>
 
     <!-- Photo Grid -->
     <div class="row">
       <div class="column">
-        <img src="./Image/iphone14pro.jpg" style="width:100%">
+        <img src="./Image/case1.jfif" style="width:100%">
       </div>
 
       <div class="column">
-        <img src="./Image/iphone14promax.jpg" style="width:100%">
+        <img src="./Image/case2.jfif" style="width:100%">
       </div>
 
       <div class="column">
-        <img src="./Image/iphone14.jpg" style="width:100%">
+        <img src="./Image/case3.jfif" style="width:100%">
       </div>
 
       <div class="column">
-        <img src="./Image/iphone14plus.jpg" style="width:100%">
-      </div>
-
-
-    </div>
-
-    <!-- buttons and text -->
-    <div class="row">
-      <div class="column">
-        <h3>iPhone 14 Pro</h3>
-        <button class="btn">Buy</button>
-      </div>
-
-      <div class="column">
-        <h3>iPhone 14 Max</h3>
-        <button class="btn">Buy</button>
-      </div>
-      <div class="column">
-        <h3>iPhone 14</h3>
-        <button class="btn">Buy</button>
-
-      </div>
-      <div class="column">
-        <h3>iPhone 14 Plus</h3>
-        <button class="btn">Buy</button>
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="column">
-        <img src="./Image/iphonese.jpg" style="width:100%">
-      </div>
-
-      <div class="column">
-        <img src="./Image/iphone13.jpg" style="width:100%">
-      </div>
-
-      <div class="column">
-        <img src="./Image/iphone13 mini.jpg" style="width:100%">
-      </div>
-
-      <div class="column">
-        <img src="./Image/iphone12.jpg" style="width:100%">
+        <img src="./Image/case4.jfif" style="width:100%">
       </div>
 
     </div>
@@ -103,25 +74,31 @@
     <!-- buttons and text -->
     <div class="row">
       <div class="column">
-        <h3>iPhone SE</h3>
-        <button class="btn">Buy</button>
+        <h3>iPhone 14 Pro Leather Case with MagSafe</h3>
+        <form method="get" action="add_to_cart_case.php">
+          <label><input type=submit class="btn" value="Add to cart" name="case1"></label>
+        </form>
       </div>
 
       <div class="column">
-        <h3>iPhone 13</h3>
-        <button class="btn">Buy</button>
+        <h3>iPhone 14 Clear Case with MagSafe</h3>
+        <form method="get" action="add_to_cart_case.php">
+          <label><input type=submit class="btn" value="Add to cart" name="case2"></label>
+        </form>
       </div>
       <div class="column">
-        <h3>iPhone 13 Mini</h3>
-        <button class="btn">Buy</button>
-
+        <h3>iPhone 14 Plus Silicone Case with MagSafe</h3>
+        <form method="get" action="add_to_cart_case.php">
+          <label><input type=submit class="btn" value="Add to cart" name="case3"></label>
+        </form>
       </div>
       <div class="column">
-        <h3>iPhone 12</h3>
-        <button class="btn">Buy</button>
+        <h3>iPhone 14 Pro Max Leather Case with MagSafe</h3>
+        <form method="get" action="add_to_cart_case.php">
+          <label><input type=submit class="btn" value="Add to cart" name="case4"></label>
+        </form>
       </div>
     </div>
-
     <footer>
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
       <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
