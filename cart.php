@@ -12,6 +12,15 @@ if (isset($_GET['plus'])) {
 if (isset($_GET['minus'])) {
 	$_SESSION['cart'][$_GET['minus']]--;
 }
+
+function displayEmpty()
+{
+	echo '<p class="centeredparagraph"><a href="index.php" class="cc_empty_links">Continue shopping</a>';
+	echo '<footer>
+		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
+		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
+	 	 </footer>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -124,15 +133,3 @@ if (isset($_GET['minus'])) {
 </body>
 
 </html>
-
-
-<?php
-function displayEmpty()
-{
-	echo '<p class="centeredparagraph"><a href="index.php" class="cc_empty_links">Continue shopping</a>';
-	echo '<footer>
-		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
-		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
-	 	 </footer>';
-}
-?>
