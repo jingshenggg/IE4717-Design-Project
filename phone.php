@@ -34,7 +34,7 @@
     </nav>
     <main style="padding-bottom: 100px;">
       <div class="header">
-        <h1>Phones</h1>
+        <h1>Phone</h1>
         <p>Check out the latest appple phones</p>
       </div>
 

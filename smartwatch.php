@@ -49,7 +49,7 @@ include "setup_session.php";
 
     <main style="padding-bottom: 100px;">
       <div class="header">
-        <h1>SmartWatches</h1>
+        <h1>SmartWatch</h1>
         <p>Check out the latest Smartwatches</p>
       </div>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Airpods</title>
+  <title>Airpod</title>
   <meta charset="uft-8">
   <link href="./CSS/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -35,7 +35,7 @@
 
     <main style="padding-bottom: 100px;">
     <div class="header">
-      <h1>AirPods</h1>
+      <h1>AirPod</h1>
       <p>Check out the latest AirPods</p>
     </div>
 
