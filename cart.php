@@ -40,7 +40,17 @@ if (isset($_GET['minus'])) {
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php">
-					<div class="fas fa-shopping-cart" id="cart-btn"></div>
+					<div class="fas fa-shopping-cart" id="cart-btn">
+						<?php
+						$total = 0;
+						for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+							if ($_SESSION['cart'][$i] > 0) {
+								$total += $_SESSION['cart'][$i];
+							}
+						}
+						echo $total;
+						?>
+					</div>
 				</a>
 			</div>
 		</div>
@@ -87,9 +97,9 @@ if (isset($_GET['minus'])) {
 						if ($_SESSION['cart'][$i] > 0) {
 							echo "<tr>";
 							echo "<td align='center'>" . $row['case_name'] . "</td>";
-							echo '<td align="center"><a href="' . "?minus=" . $i . '"><img src="minus_symbol.png" class="cc_minus"></a>';
+							echo '<td align="center"><a href="' . "?minus=" . $i . '"><button type="button" class="cc_minus">-</button></a>';
 							echo $_SESSION["cart"][$i];
-							echo '<a href="' . "?plus=" . $i . '"><img src="plus_symbol.png" class="cc_plus"></a>';
+							echo '<a href="' . "?plus=" . $i . '"><button type="button" class="cc_lplus">+</button></a>';
 							echo "<td align='center'>$" . $row['case_price'] . "</td>";
 							echo "</tr>";
 							$total = $total + (float)$row['case_price'] * (int)$_SESSION['cart'][$i];
@@ -117,11 +127,12 @@ if (isset($_GET['minus'])) {
 
 
 <?php
-    function displayEmpty(){
-        echo '<p class="centeredparagraph"><a href="index.php" class="cc_empty_links">Continue shopping</a>';
-		echo '<footer>
+function displayEmpty()
+{
+	echo '<p class="centeredparagraph"><a href="index.php" class="cc_empty_links">Continue shopping</a>';
+	echo '<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
 		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
 	 	 </footer>';
-    }
+}
 ?>
