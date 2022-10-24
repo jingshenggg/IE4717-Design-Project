@@ -6,7 +6,11 @@
     text-align: center;
     padding: 32px;
   }
-  
+
+  .title {
+    color: #bc96c6;
+}
+
   .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -122,6 +126,10 @@ header {
 .cart {
     width: 40px;
     cursor: pointer;
+}
+
+#cart-btn {
+  color: #bc96c6;
 }
 
 footer {

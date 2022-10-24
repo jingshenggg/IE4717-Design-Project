@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
+      <h2><a href="index.php" style="text-decoration:none" class="title">Phones & Accessories Hub</a></h2>
     </header>
     <nav>
       <div class="navbar">

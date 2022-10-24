@@ -10,7 +10,7 @@
 
 <body>
 	<header>
-		<h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
+		<h2><a href="index.php" style="text-decoration:none" class="title">Phones & Accessories Hub</a></h2>
 	</header>
 	<nav>
 		<div class="navbar">
@@ -32,15 +32,15 @@
 	</nav>
 	<main style="padding-bottom: 100px;">
 		<div class="div1">
-			<a href="#"><img src="./Image/iPhone14_homepage.jpeg"></a>
+			<a href="phone.php"><img src="./Image/iPhone14_homepage.jpeg"></a>
 			<!--require edit-->
 		</div>
 		<div class="div2">
-			<a href="#"><img src="./Image/airpods_homepage.jpg"></a>
-			<a href="#"><img src="./Image/applewatch_homepage.jpg"></a>
+			<a href="airpod.php"><img src="./Image/airpods_homepage.jpg"></a>
+			<a href="smartwatch.php"><img src="./Image/applewatch_homepage.jpg"></a>
 		</div>
 		<div class="div3">
-			<a href="#"><img src="./Image/phonecases_homepage.jpg"></a>
+			<a href="case.php"><img src="./Image/phonecases_homepage.jpg"></a>
 		</div>
 	</main>
 	<footer>

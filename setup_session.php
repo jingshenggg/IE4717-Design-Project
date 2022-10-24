@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "db_connect.php";
-$sql = "SELECT case_id, case_price FROM shop.case1";
+$sql = "SELECT product_id, product_price FROM shop.product";
 if(!$result = mysqli_query($conn, $sql)) {
 	echo "Something went wrong when fetching product info: " . mysqli_error($conn);
 }

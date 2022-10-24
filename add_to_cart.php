@@ -12,5 +12,17 @@
     }elseif(isset($_GET['case4'])){
         $_SESSION['cart'][3]++;
         header("location:../IE4717-Design-Project/case.php");
+    }elseif(isset($_GET['watch1'])){
+        $_SESSION['cart'][4]++;
+        header("location:../IE4717-Design-Project/smartwatch.php");
+    }elseif(isset($_GET['watch2'])){
+        $_SESSION['cart'][5]++;
+        header("location:../IE4717-Design-Project/smartwatch.php");
+    }elseif(isset($_GET['watch3'])){
+        $_SESSION['cart'][6]++;
+        header("location:../IE4717-Design-Project/smartwatch.php");
+    }elseif(isset($_GET['watch4'])){
+        $_SESSION['cart'][7]++;
+        header("location:../IE4717-Design-Project/smartwatch.php");
     }
 ?>

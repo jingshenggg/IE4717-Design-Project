@@ -35,7 +35,7 @@ function displayEmpty()
 
 <body>
 	<header>
-		<h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
+		<h2><a href="index.php" style="text-decoration:none" class="title">Phones & Accessories Hub</a></h2>
 	</header>
 	<nav>
 		<div class="navbar">
@@ -97,7 +97,7 @@ function displayEmpty()
 				<tbody>
 					<?php
 					$total = 0;
-					$sql = "SELECT case_name, case_price FROM shop.case1";
+					$sql = "SELECT product_name, product_price FROM shop.product";
 					if (!$result = mysqli_query($conn, $sql)) {
 						echo "Something went wrong when fetching data from database: " . mysqli_error($conn);
 					}
@@ -105,13 +105,13 @@ function displayEmpty()
 						$row = mysqli_fetch_assoc($result);
 						if ($_SESSION['cart'][$i] > 0) {
 							echo "<tr>";
-							echo "<td align='center'>" . $row['case_name'] . "</td>";
+							echo "<td align='center'>" . $row['product_name'] . "</td>";
 							echo '<td align="center"><a href="' . "?minus=" . $i . '"><button type="button" class="cc_minus">-</button></a>';
 							echo $_SESSION["cart"][$i];
 							echo '<a href="' . "?plus=" . $i . '"><button type="button" class="cc_lplus">+</button></a>';
-							echo "<td align='center'>$" . $row['case_price'] . "</td>";
+							echo "<td align='center'>$" . $row['product_price'] . "</td>";
 							echo "</tr>";
-							$total = $total + (float)$row['case_price'] * (int)$_SESSION['cart'][$i];
+							$total = $total + (float)$row['product_price'] * (int)$_SESSION['cart'][$i];
 						}
 					}
 					echo "<tr>";

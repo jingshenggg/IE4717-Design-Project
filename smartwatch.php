@@ -1,3 +1,7 @@
+<?php
+include "setup_session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +17,7 @@
 
   <body>
     <header>
-      <h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
+      <h2><a href="index.php" style="text-decoration:none" class="title">Phones & Accessories Hub</a></h2>
     </header>
     <nav>
       <div class="navbar">
@@ -27,7 +31,17 @@
           <input type="search" class="search-form" id="search-box" placeholder="search here...">
           <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn">
+              <?php
+              $total = 0;
+              for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+                if ($_SESSION['cart'][$i] > 0) {
+                  $total += $_SESSION['cart'][$i];
+                }
+              }
+              echo $total;
+              ?>
+            </div>
           </a>
         </div>
       </div>
@@ -63,21 +77,28 @@
       <div class="row">
         <div class="column">
           <h3>Apple Watch 8</h3>
-          <button class="btn">Buy</button>
+          <form method="get" action="add_to_cart.php">
+            <label><input type=submit class="btn" value="Add to cart" name="watch1"></label>
+          </form>
         </div>
 
         <div class="column">
           <h3>Apple Watch SE</h3>
-          <button class="btn">Buy</button>
+          <form method="get" action="add_to_cart.php">
+            <label><input type=submit class="btn" value="Add to cart" name="watch2"></label>
+          </form>
         </div>
         <div class="column">
           <h3>Apple Watch Ultra</h3>
-          <button class="btn">Buy</button>
-
+          <form method="get" action="add_to_cart.php">
+            <label><input type=submit class="btn" value="Add to cart" name="watch3"></label>
+          </form>
         </div>
         <div class="column">
           <h3>Apple Watch Hermes</h3>
-          <button class="btn">Buy</button>
+          <form method="get" action="add_to_cart.php">
+            <label><input type=submit class="btn" value="Add to cart" name="watch4"></label>
+          </form>
         </div>
       </div>
     </main>
