@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</nav>
-	<main>
+	<main style="padding-bottom: 100px;">
 		<div class="div1">
 			<a href="#"><img src="./Image/iPhone14_homepage.jpeg"></a>
 			<!--require edit-->

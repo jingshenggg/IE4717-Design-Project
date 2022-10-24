@@ -13,9 +13,7 @@ include "setup_session.php";
 </head>
 
 <body>
-  </style>
-
-  <body>
+  <main style="padding-bottom: 100px;">
     <header>
       <h2><a href="index.php" style="text-decoration:none">Phones & Accessories Hub</a></h2>
     </header>
@@ -99,10 +97,11 @@ include "setup_session.php";
         </form>
       </div>
     </div>
-    <footer>
-      <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
-      <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
-    </footer>
-  </body>
+  </main>
+  <footer>
+    <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
+    <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
+  </footer>
+</body>
 
 </html>

@@ -33,6 +33,7 @@
       </div>
     </nav>
 
+    <main style="padding-bottom: 100px;">
     <div class="header">
       <h1>AirPods</h1>
       <p>Check out the latest AirPods</p>
@@ -79,7 +80,7 @@
         <button class="btn">Buy</button>
       </div>
     </div>
-
+    </main>
     <footer>
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
       <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>

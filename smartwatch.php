@@ -33,52 +33,54 @@
       </div>
     </nav>
 
-    <div class="header">
-      <h1>SmartWatches</h1>
-      <p>Check out the latest Smartwatches</p>
-    </div>
-
-    <!-- Photo Grid -->
-    <div class="row">
-      <div class="column">
-        <img src="./Image/applewatch8.jpg" style="width:100%">
+    <main style="padding-bottom: 100px;">
+      <div class="header">
+        <h1>SmartWatches</h1>
+        <p>Check out the latest Smartwatches</p>
       </div>
 
-      <div class="column">
-        <img src="./Image/applewatchse.jpg" style="width:100%">
-      </div>
+      <!-- Photo Grid -->
+      <div class="row">
+        <div class="column">
+          <img src="./Image/applewatch8.jpg" style="width:100%">
+        </div>
 
-      <div class="column">
-        <img src="./Image/applewatchultra.jpg" style="width:100%">
-      </div>
+        <div class="column">
+          <img src="./Image/applewatchse.jpg" style="width:100%">
+        </div>
 
-      <div class="column">
-        <img src="./Image/hermes.jpg" style="width:100%">
-      </div>
+        <div class="column">
+          <img src="./Image/applewatchultra.jpg" style="width:100%">
+        </div>
 
-    </div>
-
-    <!-- buttons and text -->
-    <div class="row">
-      <div class="column">
-        <h3>Apple Watch 8</h3>
-        <button class="btn">Buy</button>
-      </div>
-
-      <div class="column">
-        <h3>Apple Watch SE</h3>
-        <button class="btn">Buy</button>
-      </div>
-      <div class="column">
-        <h3>Apple Watch Ultra</h3>
-        <button class="btn">Buy</button>
+        <div class="column">
+          <img src="./Image/hermes.jpg" style="width:100%">
+        </div>
 
       </div>
-      <div class="column">
-        <h3>Apple Watch Hermes</h3>
-        <button class="btn">Buy</button>
+
+      <!-- buttons and text -->
+      <div class="row">
+        <div class="column">
+          <h3>Apple Watch 8</h3>
+          <button class="btn">Buy</button>
+        </div>
+
+        <div class="column">
+          <h3>Apple Watch SE</h3>
+          <button class="btn">Buy</button>
+        </div>
+        <div class="column">
+          <h3>Apple Watch Ultra</h3>
+          <button class="btn">Buy</button>
+
+        </div>
+        <div class="column">
+          <h3>Apple Watch Hermes</h3>
+          <button class="btn">Buy</button>
+        </div>
       </div>
-    </div>
+    </main>
 
     <footer>
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>

@@ -32,95 +32,95 @@
         </div>
       </div>
     </nav>
-    <div class="header">
-      <h1>Phones</h1>
-      <p>Check out the latest appple phones</p>
-    </div>
-
-    <!-- Photo Grid -->
-    <div class="row">
-      <div class="column">
-        <img src="./Image/iphone14pro.jpg" style="width:100%">
+    <main style="padding-bottom: 100px;">
+      <div class="header">
+        <h1>Phones</h1>
+        <p>Check out the latest appple phones</p>
       </div>
 
-      <div class="column">
-        <img src="./Image/iphone14promax.jpg" style="width:100%">
+      <!-- Photo Grid -->
+      <div class="row">
+        <div class="column">
+          <img src="./Image/iphone14pro.jpg" style="width:100%">
+        </div>
+
+        <div class="column">
+          <img src="./Image/iphone14promax.jpg" style="width:100%">
+        </div>
+
+        <div class="column">
+          <img src="./Image/iphone14.jpg" style="width:100%">
+        </div>
+
+        <div class="column">
+          <img src="./Image/iphone14plus.jpg" style="width:100%">
+        </div>
       </div>
 
-      <div class="column">
-        <img src="./Image/iphone14.jpg" style="width:100%">
+      <!-- buttons and text -->
+      <div class="row">
+        <div class="column">
+          <h3>iPhone 14 Pro</h3>
+          <button class="btn">Buy</button>
+        </div>
+
+        <div class="column">
+          <h3>iPhone 14 Max</h3>
+          <button class="btn">Buy</button>
+        </div>
+        <div class="column">
+          <h3>iPhone 14</h3>
+          <button class="btn">Buy</button>
+
+        </div>
+        <div class="column">
+          <h3>iPhone 14 Plus</h3>
+          <button class="btn">Buy</button>
+        </div>
       </div>
 
-      <div class="column">
-        <img src="./Image/iphone14plus.jpg" style="width:100%">
-      </div>
 
+      <div class="row">
+        <div class="column">
+          <img src="./Image/iphonese.jpg" style="width:100%">
+        </div>
 
-    </div>
+        <div class="column">
+          <img src="./Image/iphone13.jpg" style="width:100%">
+        </div>
 
-    <!-- buttons and text -->
-    <div class="row">
-      <div class="column">
-        <h3>iPhone 14 Pro</h3>
-        <button class="btn">Buy</button>
-      </div>
+        <div class="column">
+          <img src="./Image/iphone13 mini.jpg" style="width:100%">
+        </div>
 
-      <div class="column">
-        <h3>iPhone 14 Max</h3>
-        <button class="btn">Buy</button>
-      </div>
-      <div class="column">
-        <h3>iPhone 14</h3>
-        <button class="btn">Buy</button>
+        <div class="column">
+          <img src="./Image/iphone12.jpg" style="width:100%">
+        </div>
 
       </div>
-      <div class="column">
-        <h3>iPhone 14 Plus</h3>
-        <button class="btn">Buy</button>
-      </div>
-    </div>
 
+      <!-- buttons and text -->
+      <div class="row">
+        <div class="column">
+          <h3>iPhone SE</h3>
+          <button class="btn">Buy</button>
+        </div>
 
-    <div class="row">
-      <div class="column">
-        <img src="./Image/iphonese.jpg" style="width:100%">
-      </div>
+        <div class="column">
+          <h3>iPhone 13</h3>
+          <button class="btn">Buy</button>
+        </div>
+        <div class="column">
+          <h3>iPhone 13 Mini</h3>
+          <button class="btn">Buy</button>
 
-      <div class="column">
-        <img src="./Image/iphone13.jpg" style="width:100%">
+        </div>
+        <div class="column">
+          <h3>iPhone 12</h3>
+          <button class="btn">Buy</button>
+        </div>
       </div>
-
-      <div class="column">
-        <img src="./Image/iphone13 mini.jpg" style="width:100%">
-      </div>
-
-      <div class="column">
-        <img src="./Image/iphone12.jpg" style="width:100%">
-      </div>
-
-    </div>
-
-    <!-- buttons and text -->
-    <div class="row">
-      <div class="column">
-        <h3>iPhone SE</h3>
-        <button class="btn">Buy</button>
-      </div>
-
-      <div class="column">
-        <h3>iPhone 13</h3>
-        <button class="btn">Buy</button>
-      </div>
-      <div class="column">
-        <h3>iPhone 13 Mini</h3>
-        <button class="btn">Buy</button>
-
-      </div>
-      <div class="column">
-        <h3>iPhone 12</h3>
-        <button class="btn">Buy</button>
-      </div>
-    </div>
+    </main>
 
     <footer>
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
