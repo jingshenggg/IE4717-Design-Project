@@ -99,7 +99,7 @@ include "setup_session.php";
         </div>
         <div class="column">
           <h3>Apple Watch Hermes</h3>
-          <h3>$1579.00</h3>
+          <h3>$1759.00</h3>
           <form method="get" action="add_to_cart.php">
             <label><input type=submit class="btn" value="Add to cart" name="watch4"></label>
           </form>
