@@ -28,6 +28,10 @@ INSERT INTO shop.product (product_id, product_name, product_price)
     (NULL, "Apple Watch 8", 399.00),
     (NULL, "Apple Watch SE", 249.00),
     (NULL, "Apple Watch Ultra", 799.00),
-    (NULL, "Apple Watch Hermes", 1759.00);
+    (NULL, "Apple Watch Hermes", 1759.00),
+    (NULL, "AirPods (2nd Gen)", 199.00),
+    (NULL, "AirPods (3rd Gen)", 269.00),
+    (NULL, "AirPods Pro (2nd Gen)", 359.00),
+    (NULL, "AirPods Max", 799.00);
 
 

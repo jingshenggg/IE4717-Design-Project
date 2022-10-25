@@ -25,4 +25,20 @@
         $_SESSION['cart'][7]++;
         header("location:../IE4717-Design-Project/smartwatch.php");
     }
+    elseif(isset($_GET['airpod1'])){
+        $_SESSION['cart'][8]++;
+        header("location:../IE4717-Design-Project/airpod.php");
+    }
+    elseif(isset($_GET['airpod2'])){
+        $_SESSION['cart'][9]++;
+        header("location:../IE4717-Design-Project/airpod.php");
+    }
+    elseif(isset($_GET['airpod3'])){
+        $_SESSION['cart'][10]++;
+        header("location:../IE4717-Design-Project/airpod.php");
+    }
+    elseif(isset($_GET['airpod4'])){
+        $_SESSION['cart'][11]++;
+        header("location:../IE4717-Design-Project/airpod.php");
+    }
 ?>
