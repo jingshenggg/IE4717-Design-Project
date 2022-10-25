@@ -27,7 +27,7 @@ function displayEmpty()
 <html lang="en">
 
 <head>
-	<title>Phones & Accessories Hub</title>
+	<title>Cart</title>
 	<meta charset=“utf-8”>
 	<link href="./CSS/cart.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
