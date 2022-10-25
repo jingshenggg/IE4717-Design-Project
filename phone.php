@@ -61,63 +61,84 @@
       <div class="row">
         <div class="column">
           <h3>iPhone 14 Pro</h3>
-          <button class="btn">Buy</button>
+          <label for="phone_mem">Choose memory:</label>
+          <select name="phone_mem" id="phone_mem">
+            <option value="128GB">128 GB</option>
+            <option value="256GB">256 GB</option>
+            <option value="512GB">512 GB</option>
+            <option value="1TB">1 TB</option>
+          </select>
+          <br>
+          <label for="phone_color">Choose color:</label>
+          <select name="phone_color" id="phone_color">
+            <option value="deep_purple">Deep Purple</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="space_black">Space Black</option>
+          </select>
+          <br>
+          <label><input type=submit class="btn" value="Add to cart" name=""></label>
         </div>
 
         <div class="column">
-          <h3>iPhone 14 Max</h3>
-          <button class="btn">Buy</button>
+          <h3>iPhone 14 Pro Max</h3>
+          <label for="phone_mem">Choose memory:</label>
+          <select name="phone_mem" id="phone_mem">
+            <option value="128GB">128 GB</option>
+            <option value="256GB">256 GB</option>
+            <option value="512GB">512 GB</option>
+            <option value="1TB">1 TB</option>
+          </select>
+          <br>
+          <label for="phone_color">Choose color:</label>
+          <select name="phone_color" id="phone_color">
+            <option value="deep_purple">Deep Purple</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="space_black">Space Black</option>
+          </select>
+          <br>
+          <label><input type=submit class="btn" value="Add to cart" name=""></label>
         </div>
         <div class="column">
           <h3>iPhone 14</h3>
-          <button class="btn">Buy</button>
-
+          <label for="phone_mem">Choose memory:</label>
+          <select name="phone_mem" id="phone_mem">
+            <option value="128GB">128 GB</option>
+            <option value="256GB">256 GB</option>
+            <option value="512GB">512 GB</option>
+          </select>
+          <br>
+          <label for="phone_color">Choose color:</label>
+          <select name="phone_color" id="phone_color">
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="midnight">Midnight</option>
+            <option value="starlight">Starlight</option>
+            <option value="red">Red</option>
+          </select>
+          <br>
+          <label><input type=submit class="btn" value="Add to cart" name=""></label>
         </div>
         <div class="column">
           <h3>iPhone 14 Plus</h3>
-          <button class="btn">Buy</button>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="column">
-          <img src="./Image/iphonese.jpg" style="width:100%">
-        </div>
-
-        <div class="column">
-          <img src="./Image/iphone13.jpg" style="width:100%">
-        </div>
-
-        <div class="column">
-          <img src="./Image/iphone13 mini.jpg" style="width:100%">
-        </div>
-
-        <div class="column">
-          <img src="./Image/iphone12.jpg" style="width:100%">
-        </div>
-
-      </div>
-
-      <!-- buttons and text -->
-      <div class="row">
-        <div class="column">
-          <h3>iPhone SE</h3>
-          <button class="btn">Buy</button>
-        </div>
-
-        <div class="column">
-          <h3>iPhone 13</h3>
-          <button class="btn">Buy</button>
-        </div>
-        <div class="column">
-          <h3>iPhone 13 Mini</h3>
-          <button class="btn">Buy</button>
-
-        </div>
-        <div class="column">
-          <h3>iPhone 12</h3>
-          <button class="btn">Buy</button>
+          <label for="phone_mem">Choose memory:</label>
+          <select name="phone_mem" id="phone_mem">
+            <option value="128GB">128 GB</option>
+            <option value="256GB">256 GB</option>
+            <option value="512GB">512 GB</option>
+          </select>
+          <br>
+          <label for="phone_color">Choose color:</label>
+          <select name="phone_color" id="phone_color">
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="midnight">Midnight</option>
+            <option value="starlight">Starlight</option>
+            <option value="red">Red</option>
+          </select>
+          <br>
+          <label><input type=submit class="btn" value="Add to cart" name=""></label>
         </div>
       </div>
     </main>

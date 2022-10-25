@@ -1,3 +1,7 @@
+<?php
+include "setup_session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +29,17 @@
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php">
-					<div class="fas fa-shopping-cart" id="cart-btn"></div>
+					<div class="fas fa-shopping-cart" id="cart-btn">
+						<?php
+						$total = 0;
+						for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+							if ($_SESSION['cart'][$i] > 0) {
+								$total += $_SESSION['cart'][$i];
+							}
+						}
+						echo $total;
+						?>
+					</div>
 				</a>
 			</div>
 		</div>
