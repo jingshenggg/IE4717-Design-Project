@@ -34,6 +34,7 @@ INSERT INTO shop.product (product_id, product_name, product_price, product_color
     (NULL, "AirPods (2nd Gen)", 199.00, NULL, NULL),
     (NULL, "AirPods (3rd Gen)", 269.00, NULL, NULL),
     (NULL, "AirPods Pro (2nd Gen)", 359.00, NULL, NULL),
+    (NULL, "AirPods Max", 799.00, NULL, NULL),
     (NULL, "iPhone 14 Pro", 1649.00, "Deep Purple", "128GB"),
     (NULL, "iPhone 14 Pro", 1819.00, "Deep Purple", "256GB"),
     (NULL, "iPhone 14 Pro", 2149.00, "Deep Purple", "512GB"),

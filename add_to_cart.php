@@ -36,4 +36,8 @@
     }elseif(isset($_GET['airpod4'])){
         $_SESSION['cart'][11]++;
         header("location:../IE4717-Design-Project/airpod.php");
+    }elseif(isset($_GET['iphone14pro']) && isset($_GET['128GB'])){
+        $_SESSION['cart'][12]++;
+        header("location:../IE4717-Design-Project/phone.php");
     }
+
