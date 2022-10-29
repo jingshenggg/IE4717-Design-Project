@@ -85,6 +85,7 @@ body {
 
 main {
     padding: 100px;
+    text-align: center;
 }
 
 .btn {
@@ -98,4 +99,12 @@ main {
     opacity: 1;
     transition: 0.3s;
     border-radius: 12px;
-  }
+    text-decoration: none;
+    color: black;
+}
+
+.btn:hover {opacity: 0.3}
+
+.contshop {
+    text-align: center;
+}

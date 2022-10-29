@@ -16,7 +16,13 @@ if (isset($_GET['minus'])) {
 
 function displayEmpty()
 {
-	echo "<p class='centeredparagraph'><button class='btn'><a href='index.php' class='cc_empty_links'>Continue shopping</a></button>";
+	echo "<div class='contshop'>";
+	echo "<form action='index.php'><input type='submit' value='Continue shopping' class='btn'/></form>";
+	echo "</div>";
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	echo '<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
 		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
@@ -69,7 +75,7 @@ function displayEmpty()
 			</div>
 		</div>
 	</nav>
-	<main>
+	<main style="padding-bottom: 100px;">
 		<p class="centeredparagraph">
 			<?php
 			$total = 0;
@@ -94,7 +100,7 @@ function displayEmpty()
 			?>
 		</p>
 		<div class="cc_menu_wrapper">
-			<table class="cc_table">
+			<table class="cc_table" align="center">
 				<thead>
 					<tr>
 						<th>Item</th>
@@ -154,8 +160,8 @@ function displayEmpty()
 
 					 }
 					echo "<tr>";
-					echo "<td colspan=2 align='left' style='padding-left:35px;font-size:20px; font-weight:bold;'>Total price </td>";
-					echo "<td align='center' style='font-size:20px;font-weight:bold;'>$" . number_format($total, 2) . "</td>";
+					echo "<td colspan=2 align='left' style='padding-left:80px;padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+					echo "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px'>$" . number_format($total, 2) . "</td>";
 					echo "</tr>";
 					?>
 				</tbody>
@@ -163,32 +169,8 @@ function displayEmpty()
 			<div>
 			<br/>
 			<br/>
-			<br/>
-			<br/>
-			<form method="post" action="" onsubmit="return validateForm('order');">
-    <label for="firstname" class="label_jobapplication">First name*</label><input class="input_jobapplication" name="firstname" id="firstname" type="text" placeholder="First name" required><br>
-    <label for="lastname" class="label_jobapplication">Last name*</label><input class="input_jobapplication" name="lastname" id="lastname" type="text" placeholder="Last name" required><br>
-    <label for="email" class="label_jobapplication">E-mail*</label><input class="input_jobapplication" name="email" id="email" type="email" placeholder="E-mail address" required><br>
-    <label for="streetaddress" class="label_jobapplication">Street address*</label><input class="input_jobapplication" name="streetaddress" id="streetaddress" type="text" placeholder="Street address" required><br>
-    <label for="zipcode" class="label_jobapplication">Zip code*</label><input class="input_jobapplication" name="zipcode" id="zipcode" type="text" placeholder="Zip code" required><br>
-    <label for="additional_info" class="label_jobapplication">Additional info</label><textarea class="input_jobapplication" id="additional_info" rows="4" cols="40" placeholder="Additional info to driver"></textarea><br>
-    <label for="payment" class="label_jobapplication">Payment*</label>
-    <select class="input_jobapplication" name='payment_method' required onchange="displayCreditcardInfo()">
-        <option selected>Choose here</option>
-        <option value="cash">Cash</option>
-        <option id="creditcard" value='creditcard'>Credit card</option>
-        <option value="invoice">Invoice</option>
-    </select><br>
-    <label for="creditcard_number" class="label_jobapplication" id="creditcard_number_label"></label>
-        <input class="input_jobapplication" name="creditcard_number" id="creditcard_number" placeholder="Creditcard number" type="hidden"><br>
-        <label for="cvc_number" class="label_jobapplication" id="cvc_number_label"></label>
-     <input class="input_jobapplication" id="cvc_number" placeholder="CVC" type="hidden"><br>
-    <br><br>
-    <input class="submit_jobapplication" type="submit" value="Confirm order">
-    <script src="scripts.js"></script>
-</form>
 			</div>
-			<p class="centeredparagraph"><a href="cart.php" class="cc_links" style="margin-right:13%;">Continue to checkout</a>
+			<p class="centeredparagraph"><a href="checkout.php" class="cc_links" style="margin-right:13%;">Continue to checkout</a>
 				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
 			</p>
 		</div>
