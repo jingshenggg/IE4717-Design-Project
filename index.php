@@ -32,11 +32,15 @@ include "setup_session.php";
 					<div class="fas fa-shopping-cart" id="cart-btn">
 						<?php
 						$total = 0;
-						for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-							if ($_SESSION['cart'][$i] > 0) {
-								$total += $_SESSION['cart'][$i];
+						if(isset($_SESSION['cart']))
+						{
+							for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+								if ($_SESSION['cart'][$i] > 0) {
+									$total += $_SESSION['cart'][$i];
+								}
 							}
 						}
+
 						echo $total;
 						?>
 					</div>

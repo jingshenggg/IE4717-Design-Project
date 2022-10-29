@@ -30,15 +30,19 @@ include "setup_session.php";
           <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
             <div class="fas fa-shopping-cart" id="cart-btn">
-              <?php
-              $total = 0;
-              for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                if ($_SESSION['cart'][$i] > 0) {
-                  $total += $_SESSION['cart'][$i];
-                }
-              }
-              echo $total;
-              ?>
+						<?php
+						$total = 0;
+						if(isset($_SESSION['cart']))
+						{
+							for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+								if ($_SESSION['cart'][$i] > 0) {
+									$total += $_SESSION['cart'][$i];
+								}
+							}
+						}
+
+						echo $total;
+						?>
             </div>
           </a>
         </div>
@@ -71,35 +75,31 @@ include "setup_session.php";
 
     <!-- buttons and text -->
     <div class="row">
-      <div class="column">
-        <h3>iPhone 14 Pro Leather Case with MagSafe</h3>
-        <h3>$59.00</h3>
-        <form method="get" action="add_to_cart.php">
-          <label><input type=submit class="btn" value="Add to cart" name="case1"></label>
-        </form>
-      </div>
+      <?php
+        $product_query="SELECT * FROM product WHERE product_type='case'";
+        $result_products=$conn->query($product_query);
+        $num_result_products=$result_products->num_rows;
+        
+        for($i=0;$i<$num_result_products;$i++) {
+          $product= $result_products->fetch_assoc();
+          $productdetail_query="SELECT * FROM product_detail WHERE product_id=".$product['id'];
+          $result_productdetail=$conn->query($productdetail_query);
+          if($result_productdetail->num_rows)
+          {
+            $productdetail= $result_productdetail->fetch_assoc();
+          }      
+          echo "<div class='column'>";
+          echo "<h3>".$product['product_name']."</h3>";
+          echo "<h3>$".$productdetail['product_price']."</h3>";
+          echo "<form method='POST' action='add_to_cart.php?id=".$product['id']."'>";
+          echo    "<input type='text' name='product_type' value='case' hidden>";
+          echo "<label><input type=submit class='btn' value='Add to cart' ></label>";
+          echo "</form>";
+          echo "</div>";
+        }
+      ?>
 
-      <div class="column">
-        <h3>iPhone 14 Clear Case with MagSafe</h3>
-        <h3>$49.00</h3>
-        <form method="get" action="add_to_cart.php">
-          <label><input type=submit class="btn" value="Add to cart" name="case2"></label>
-        </form>
-      </div>
-      <div class="column">
-        <h3>iPhone 14 Plus Silicone Case with MagSafe</h3>
-        <h3>$49.00</h3>
-        <form method="get" action="add_to_cart.php">
-          <label><input type=submit class="btn" value="Add to cart" name="case3"></label>
-        </form>
-      </div>
-      <div class="column">
-        <h3>iPhone 14 Pro Max Leather Case with MagSafe</h3>
-        <h3>$59.00</h3>
-        <form method="get" action="add_to_cart.php">
-          <label><input type=submit class="btn" value="Add to cart" name="case4"></label>
-        </form>
-      </div>
+
     </div>
   </main>
   <footer>

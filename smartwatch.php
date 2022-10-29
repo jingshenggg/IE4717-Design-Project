@@ -32,15 +32,19 @@ include "setup_session.php";
           <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
             <div class="fas fa-shopping-cart" id="cart-btn">
-              <?php
-              $total = 0;
-              for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                if ($_SESSION['cart'][$i] > 0) {
-                  $total += $_SESSION['cart'][$i];
-                }
-              }
-              echo $total;
-              ?>
+						<?php
+						$total = 0;
+						if(isset($_SESSION['cart']))
+						{
+							for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+								if ($_SESSION['cart'][$i] > 0) {
+									$total += $_SESSION['cart'][$i];
+								}
+							}
+						}
+
+						echo $total;
+						?>
             </div>
           </a>
         </div>
@@ -75,38 +79,31 @@ include "setup_session.php";
 
       <!-- buttons and text -->
       <div class="row">
-        <div class="column">
-          <h3>Apple Watch 8</h3>
-          <h3>$399.00</h3>
-          <form method="get" action="add_to_cart.php">
-            <label><input type=submit class="btn" value="Add to cart" name="watch1"></label>
-          </form>
-        </div>
+      <?php
+          $product_query="SELECT * FROM product WHERE product_type='watch'";
+          $result_products=$conn->query($product_query);
+          $num_result_products=$result_products->num_rows;
 
-        <div class="column">
-          <h3>Apple Watch SE</h3>
-          <h3>$249.00</h3>
-          <form method="get" action="add_to_cart.php">
-            <label><input type=submit class="btn" value="Add to cart" name="watch2"></label>
-          </form>
-        </div>
-        <div class="column">
-          <h3>Apple Watch Ultra</h3>
-          <h3>$799.00</h3>
-          <form method="get" action="add_to_cart.php">
-            <label><input type=submit class="btn" value="Add to cart" name="watch3"></label>
-          </form>
-        </div>
-        <div class="column">
-          <h3>Apple Watch Hermes</h3>
-          <h3>$1759.00</h3>
-          <form method="get" action="add_to_cart.php">
-            <label><input type=submit class="btn" value="Add to cart" name="watch4"></label>
-          </form>
-        </div>
+          for($i=0;$i<$num_result_products;$i++) {
+            $product= $result_products->fetch_assoc();
+            $productdetail_query="SELECT * FROM product_detail WHERE product_id=".$product['id'];
+            $result_productdetail=$conn->query($productdetail_query);
+            if($result_productdetail->num_rows)
+            {
+              $productdetail= $result_productdetail->fetch_assoc();
+            }      
+            echo  "<div class='column'>";
+            echo  "<h3>".$product['product_name']."</h3>";
+            echo  "<h3>$".$productdetail['product_price']."</h3>";
+            echo "<form method='POST' action='add_to_cart.php?id=".$product['id']."'>";
+            echo    "<input type='text' name='product_type' value='watch' hidden>";
+            echo  "<label><input type=submit class='btn' value='Add to cart' name='watch1'></label>";
+            echo  "</form>";
+            echo  "</div>";
+          }
+      ?>
       </div>
     </main>
-
     <footer>
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
       <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>

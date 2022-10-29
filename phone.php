@@ -1,5 +1,7 @@
 <?php
-include "setup_session.php";
+//include "setup_session.php";
+include "db_connect.php";
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +34,19 @@ include "setup_session.php";
           <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
             <div class="fas fa-shopping-cart" id="cart-btn">
-              <?php
-              $total = 0;
-              for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                if ($_SESSION['cart'][$i] > 0) {
-                  $total += $_SESSION['cart'][$i];
-                }
-              }
-              echo $total;
-              ?>
+            <?php
+						$total = 0;
+						if(isset($_SESSION['cart']))
+						{
+							for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+								if ($_SESSION['cart'][$i] > 0) {
+									$total += $_SESSION['cart'][$i];
+								}
+							}
+						}
+
+						echo $total;
+						?>
             </div>
           </a>
         </div>
@@ -73,90 +79,62 @@ include "setup_session.php";
 
       <!-- buttons and text -->
       <div class="row">
-        <div class="column">
-          <h3>iPhone 14 Pro</h3>
-          <form method="get" action="add_to_cart.php">
-            <input type="text" name="phone_model" value="iphone14pro" hidden>
-            <label for="phone_mem">Choose memory:</label>
-            <select name="phone_mem" id="phone_mem">
-              <option value="Add to cart" name="128GB">128 GB</option>
-              <option value="256GB">256 GB</option>
-              <option value="512GB">512 GB</option>
-              <option value="1TB">1 TB</option>
-            </select>
-            <br>
-            <label for="phone_color">Choose color:</label>
-            <select name="phone_color" id="phone_color">
-              <option value="deep_purple">Deep Purple</option>
-              <option value="gold">Gold</option>
-              <option value="silver">Silver</option>
-              <option value="space_black">Space Black</option>
-            </select>
-            <br>
-            <label><input type=submit class="btn" value="Add to cart" name="iphone14pro"></label>
-          </form>
-        </div>
 
-        <div class="column">
-          <h3>iPhone 14 Pro Max</h3>
-          <label for="phone_mem">Choose memory:</label>
-          <select name="phone_mem" id="phone_mem">
-            <option value="128GB">128 GB</option>
-            <option value="256GB">256 GB</option>
-            <option value="512GB">512 GB</option>
-            <option value="1TB">1 TB</option>
-          </select>
-          <br>
-          <label for="phone_color">Choose color:</label>
-          <select name="phone_color" id="phone_color">
-            <option value="deep_purple">Deep Purple</option>
-            <option value="gold">Gold</option>
-            <option value="silver">Silver</option>
-            <option value="space_black">Space Black</option>
-          </select>
-          <br>
-          <label><input type=submit class="btn" value="Add to cart" name=""></label>
-        </div>
-        <div class="column">
-          <h3>iPhone 14</h3>
-          <label for="phone_mem">Choose memory:</label>
-          <select name="phone_mem" id="phone_mem">
-            <option value="128GB">128 GB</option>
-            <option value="256GB">256 GB</option>
-            <option value="512GB">512 GB</option>
-          </select>
-          <br>
-          <label for="phone_color">Choose color:</label>
-          <select name="phone_color" id="phone_color">
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-            <option value="midnight">Midnight</option>
-            <option value="starlight">Starlight</option>
-            <option value="red">Red</option>
-          </select>
-          <br>
-          <label><input type=submit class="btn" value="Add to cart" name=""></label>
-        </div>
-        <div class="column">
-          <h3>iPhone 14 Plus</h3>
-          <label for="phone_mem">Choose memory:</label>
-          <select name="phone_mem" id="phone_mem">
-            <option value="128GB">128 GB</option>
-            <option value="256GB">256 GB</option>
-            <option value="512GB">512 GB</option>
-          </select>
-          <br>
-          <label for="phone_color">Choose color:</label>
-          <select name="phone_color" id="phone_color">
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-            <option value="midnight">Midnight</option>
-            <option value="starlight">Starlight</option>
-            <option value="red">Red</option>
-          </select>
-          <br>
-          <label><input type=submit class="btn" value="Add to cart" name=""></label>
-        </div>
+          <?php
+
+                $product_query="SELECT * FROM product WHERE product_type='phone'";
+                $result_products=$conn->query($product_query);
+                $num_result_products=$result_products->num_rows;
+                for($i=0;$i<$num_result_products;$i++)
+                {
+                  $row= $result_products->fetch_assoc();
+                  echo    "<div class='column'>";
+                  echo    "<h3>".$row['product_name']."</h3>";
+                  
+                  echo    "<h3 class='price'id='price-".$row['id']."'></h3>";
+
+                  echo    "<form method='POST' action='add_to_cart.php?id=".$row['id']."'>";
+                  echo    "<input type='text' name='product_type' value='phone' hidden>";
+                  echo    "<input type='text' name='phone_model' value='".$row['product_name']."' hidden>";
+                  echo    "<label for='phone_mem'>Choose memory:</label>";
+                  echo    "<select name='phone_mem' id='phone_mem' onchange='priceupdate(".$row['id'].",this)'>";
+                  echo      "<option value='128GB'>128 GB</option>";
+                  echo      "<option value='256GB'>256 GB</option>";
+                  echo      "<option value='512GB'>512 GB</option>";
+                  echo      "<option value='1TB'>1 TB</option>";
+                  echo    "</select>";
+                  echo    "<br>";
+                  // echo    "<label for='phone_color'>Choose color:</label>";
+                  // echo    "<select name='phone_color' id='phone_color'>";
+                  // echo      "<option value='deep_purple'>Deep Purple</option>";
+                  // echo      "<option value='gold'>Gold</option>";
+                  // echo      "<option value='silver'>Silver</option>";
+                  // echo      "<option value='space_black'>Space Black</option>";
+                  // echo    "</select>";
+                  $prices_query="SELECT * FROM product_detail WHERE product_id=".$row['id'];
+                  $result_prices=$conn->query($prices_query);
+                  $num_result_prices=$result_prices->num_rows;
+                  for($j=0;$j<$num_result_prices;$j++)
+                  {
+                    $product_detail= $result_prices->fetch_assoc();
+                    if($product_detail['product_capacity']=='128GB')
+                    {
+                      echo  "<h3 id='price-".$row['id']."-".$product_detail['product_capacity']."'>$".$product_detail['product_price']."</h3>";
+                    }
+                    echo  "<h3 id='price-".$row['id']."-".$product_detail['product_capacity']."'style='display:none;'>$".$product_detail['product_price']."</h3>";
+                    
+                  }
+                  
+                  echo    "<br>";
+                  echo    "<label><input type=submit class='btn' value='Add to cart' ></label>";
+                  echo  "</form>";
+                  echo  "</div>";
+
+                }
+
+          
+          ?>
+
       </div>
     </main>
 
@@ -164,6 +142,25 @@ include "setup_session.php";
       <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
       <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
     </footer>
+    <script>
+     
+        function priceupdate(id,select)
+        {   
+          var pricetag128 = document.getElementById(`price-${id}-128GB`);
+          var pricetag256 = document.getElementById(`price-${id}-256GB`);
+          var pricetag512 = document.getElementById(`price-${id}-512GB`);
+          var pricetag1tb = document.getElementById(`price-${id}-1TB`);
+          pricetag128.style="display:none";
+          pricetag256.style="display:none";
+          pricetag512.style="display:none";
+          pricetag1tb.style="display:none";
+          
+          var pricetag = document.getElementById(`price-${id}-${select.value}`);
+          pricetag.style="display:block";
+
+        }
+    </script>
   </body>
+
 
 </html>

@@ -1,43 +1,71 @@
 <?php
-    include "setup_session.php";
-    if(isset($_GET['case1'])){
-        $_SESSION['cart'][0]++;
-        header("location:../IE4717-Design-Project/case.php");
-    }elseif(isset($_GET['case2'])){
-        $_SESSION['cart'][1]++;
-        header("location:../IE4717-Design-Project/case.php");
-    }elseif(isset($_GET['case3'])){
-        $_SESSION['cart'][2]++;
-        header("location:../IE4717-Design-Project/case.php");
-    }elseif(isset($_GET['case4'])){
-        $_SESSION['cart'][3]++;
-        header("location:../IE4717-Design-Project/case.php");
-    }elseif(isset($_GET['watch1'])){
-        $_SESSION['cart'][4]++;
-        header("location:../IE4717-Design-Project/smartwatch.php");
-    }elseif(isset($_GET['watch2'])){
-        $_SESSION['cart'][5]++;
-        header("location:../IE4717-Design-Project/smartwatch.php");
-    }elseif(isset($_GET['watch3'])){
-        $_SESSION['cart'][6]++;
-        header("location:../IE4717-Design-Project/smartwatch.php");
-    }elseif(isset($_GET['watch4'])){
-        $_SESSION['cart'][7]++;
-        header("location:../IE4717-Design-Project/smartwatch.php");
-    }elseif(isset($_GET['airpod1'])){
-        $_SESSION['cart'][8]++;
-        header("location:../IE4717-Design-Project/airpod.php");
-    }elseif(isset($_GET['airpod2'])){
-        $_SESSION['cart'][9]++;
-        header("location:../IE4717-Design-Project/airpod.php");
-    }elseif(isset($_GET['airpod3'])){
-        $_SESSION['cart'][10]++;
-        header("location:../IE4717-Design-Project/airpod.php");
-    }elseif(isset($_GET['airpod4'])){
-        $_SESSION['cart'][11]++;
-        header("location:../IE4717-Design-Project/airpod.php");
-    }elseif(isset($_GET['iphone14pro']) && isset($_GET['128GB'])){
-        $_SESSION['cart'][12]++;
-        header("location:../IE4717-Design-Project/phone.php");
-    }
+include "db_connect.php";
+session_start();
+$phone_storage= $_POST['phone_mem'];
+$phone_type= $_POST['product_type'];
+if(isset($_GET['id'])){
+    $productid=$_GET['id'];
+}
+
+if($phone_type=='phone'){
+    $sql ="SELECT * FROM product_detail WHERE product_id=".$productid." AND product_capacity='".$phone_storage."'";
+}
+else{
+    $sql ="SELECT * FROM product_detail WHERE product_id=".$productid;
+}
+
+
+$result = $conn->query($sql);
+if($result->num_rows>0){
+    $product_detail=$result->fetch_assoc();   
+}
+
+if(!isset($_SESSION["cart"])){
+    $_SESSION['cart'] = array();
+    for($i = 0; $i < 28; $i++){
+	    array_push($_SESSION['cart'], 0);
+    }   
+}
+
+$_SESSION['cart'][$product_detail['id']-1]++;
+
+if($phone_type=='phone'){
+    header("location:../IE4717-Design-Project/phone.php");
+}
+elseif($phone_type=='airpod'){
+    header("location:../IE4717-Design-Project/airpod.php");
+}
+elseif($phone_type=='case'){
+    header("location:../IE4717-Design-Project/case.php");
+}
+else{
+    header("location:../IE4717-Design-Project/smartwatch.php");
+}
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
