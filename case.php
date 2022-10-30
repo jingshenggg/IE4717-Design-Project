@@ -23,7 +23,7 @@ include "setup_session.php";
           <li><a href="phone.php">Phone</a></li>
           <li><a href="airpod.php">Airpod</a></li>
           <li><a href="smartwatch.php">Smartwatch</a></li>
-          <li><a href="case.php">Case</a></li>
+          <li><a href="case.php" style="color: #bc96c6;">Case</a></li>
         </ul>
         <div class="icon" style="padding-right: 100px">
           <input type="search" class="search-form" id="search-box" placeholder="search here...">

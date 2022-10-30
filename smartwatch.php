@@ -24,7 +24,7 @@ include "setup_session.php";
         <ul>
           <li><a href="phone.php">Phone</a></li>
           <li><a href="airpod.php">Airpod</a></li>
-          <li><a href="smartwatch.php">Smartwatch</a></li>
+          <li><a href="smartwatch.php" style="color: #bc96c6;">Smartwatch</a></li>
           <li><a href="case.php">Case</a></li>
         </ul>
         <div class="icon" style="padding-right: 100px">

@@ -44,6 +44,11 @@ header {
     color: black;
 }
 
+.navbar ul li a:hover {
+    color: #bc96c6;
+    text-decoration: underline;
+}
+
 .icon div {
     height: 4.5rem;
     width: 4.5rem;
@@ -64,8 +69,12 @@ header {
 }
 
 #cart-btn {
+    color: black;
+}
+
+#cart-btn:hover {
     color: #bc96c6;
-  }
+}
 
 footer {
     background-color: #bc96c6;

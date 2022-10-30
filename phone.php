@@ -24,7 +24,7 @@ session_start();
     <nav>
       <div class="navbar">
         <ul>
-          <li><a href="phone.php">Phone</a></li>
+          <li><a href="phone.php" style="color: #bc96c6;">Phone</a></li>
           <li><a href="airpod.php">Airpod</a></li>
           <li><a href="smartwatch.php">Smartwatch</a></li>
           <li><a href="case.php">Case</a></li>

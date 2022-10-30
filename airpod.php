@@ -23,7 +23,7 @@ include "setup_session.php";
       <div class="navbar">
         <ul>
           <li><a href="phone.php">Phone</a></li>
-          <li><a href="airpod.php">Airpod</a></li>
+          <li><a href="airpod.php" style="color: #bc96c6;">Airpod</a></li>
           <li><a href="smartwatch.php">Smartwatch</a></li>
           <li><a href="case.php">Case</a></li>
         </ul>

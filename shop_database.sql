@@ -49,7 +49,7 @@ INSERT INTO product (id, product_name, product_type)
     (NULL, "iPhone 14 Max","phone")
 
 
-    INSERT INTO product_detail (id, product_price, product_capacity,product_id)
+INSERT INTO product_detail (id, product_price, product_capacity,product_id)
     VALUES (NULL, 59.00, NULL,1),
     (NULL, 49.00, NULL, 2),
     (NULL, 49.00, NULL, 3),
@@ -62,105 +62,26 @@ INSERT INTO product (id, product_name, product_type)
     (NULL, 269.00, NULL, 10),
     (NULL, 359.00, NULL, 11),
     (NULL, 799.00, NULL, 12),
+
     (NULL, 1649.00, "128GB", 13),
     (NULL, 1819.00, "256GB", 13),
     (NULL, 2149.00, "512GB", 13),
     (NULL, 2479.00, "1TB", 13),
 
-    (NULL, 1649.00, "128GB", 14),
-    (NULL, 1819.00, "256GB", 14),
-    (NULL, 2149.00, "512GB", 14),
-    (NULL, 2479.00, "1TB", 14),
+    (NULL, 1799.00, "128GB", 14),
+    (NULL, 1969.00, "256GB", 14),
+    (NULL, 2299.00, "512GB", 14),
+    (NULL, 2629.00, "1TB", 14),
 
-    (NULL, 1649.00, "128GB", 15),
-    (NULL, 1819.00, "256GB", 15),
-    (NULL, 2149.00, "512GB", 15),
+    (NULL, 1299.00, "128GB", 15),
+    (NULL, 1469.00, "256GB", 15),
+    (NULL, 1799.00, "512GB", 15),
     (NULL, 2479.00, "1TB", 15),
 
-    (NULL, 1649.00, "128GB", 16),
+    (NULL, 1669.00, "128GB", 16),
     (NULL, 1819.00, "256GB", 16),
-    (NULL, 2149.00, "512GB", 16),
+    (NULL, 1999.00, "512GB", 16),
     (NULL, 2479.00, "1TB", 16)
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- SELECT "Filling product table" AS MESSAGE;
--- INSERT INTO shop.product (product_id, product_name, product_price, product_color, product_capacity, product_type)
---     VALUES (NULL, "iPhone 14 Pro Leather Case with MagSafe", 59.00, NULL, NULL, "case"),
---     (NULL, "iPhone 14 Clear Case with MagSafe", 49.00, NULL, NULL, "case"),
---     (NULL, "iPhone 14 Plus Silicone Case with MagSafe", 49.00, NULL, NULL, "case"),
---     (NULL, "iPhone 14 Pro Max Leather Case with MagSafe", 59.00, NULL, NULL, "case"),
---     (NULL, "Apple Watch 8", 399.00, NULL, NULL, "watch"), 
---     (NULL, "Apple Watch SE", 249.00, NULL, NULL, "watch"),
---     (NULL, "Apple Watch Ultra", 799.00, NULL, NULL, "watch"),
---     (NULL, "Apple Watch Hermes", 1759.00, NULL, NULL, "watch"),
-
---     (NULL, "AirPods (2nd Gen)", 199.00, NULL, NULL,"airpod"),
---     (NULL, "AirPods (3rd Gen)", 269.00, NULL, NULL,"airpod"),
---     (NULL, "AirPods Pro (2nd Gen)", 359.00, NULL, NULL,"airpod"),
---     (NULL, "AirPods Max", 799.00, NULL, NULL,"airpod"),
-
-    -- iphone 14 pro
-    -- (NULL, "iPhone 14 Pro", 1649.00, "Deep Purple", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1819.00, "Deep Purple", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2149.00, "Deep Purple", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1649.00, "Gold", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1819.00, "Gold", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2149.00, "Gold", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2479.00, "Gold", "1TB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1649.00, "Silver", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1819.00, "Silver", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2149.00, "Silver", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2479.00, "Silver", "1TB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1649.00, "Space Black", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 1819.00, "Space Black", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2149.00, "Space Black", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro", 2479.00, "Space Black", "1TB","phone"),
-    -- iphone 14 pro max
-    -- (NULL, "iPhone 14 Pro Max", 1649.00, "Deep Purple", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1819.00, "Deep Purple", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2149.00, "Deep Purple", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1649.00, "Gold", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1819.00, "Gold", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2149.00, "Gold", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2479.00, "Gold", "1TB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1649.00, "Silver", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1819.00, "Silver", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2149.00, "Silver", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2479.00, "Silver", "1TB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1649.00, "Space Black", "128GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 1819.00, "Space Black", "256GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2149.00, "Space Black", "512GB","phone"),
-    -- (NULL, "iPhone 14 Pro Max", 2479.00, "Space Black", "1TB","phone");
-    -- iphone 14
-    -- (NULL, "iPhone 14", 1649.00, "Deep Purple", "128GB","phone"),
-    -- (NULL, "iPhone 14", 1819.00, "Deep Purple", "256GB","phone"),
-    -- (NULL, "iPhone 14", 2149.00, "Deep Purple", "512GB","phone"),
-    -- (NULL, "iPhone 14", 1649.00, "Gold", "128GB","phone"),
-    -- (NULL, "iPhone 14", 1819.00, "Gold", "256GB","phone"),
-    -- (NULL, "iPhone 14", 2149.00, "Gold", "512GB","phone"),
-    -- (NULL, "iPhone 14", 2479.00, "Gold", "1TB","phone"),
-    -- (NULL, "iPhone 14", 1649.00, "Silver", "128GB","phone"),
-    -- (NULL, "iPhone 14", 1819.00, "Silver", "256GB","phone"),
-    -- (NULL, "iPhone 14", 2149.00, "Silver", "512GB","phone"),
-    -- (NULL, "iPhone 14", 2479.00, "Silver", "1TB","phone"),
-    -- (NULL, "iPhone 14", 1649.00, "Space Black", "128GB","phone"),
-    -- (NULL, "iPhone 14", 1819.00, "Space Black", "256GB","phone"),
-    -- (NULL, "iPhone 14", 2149.00, "Space Black", "512GB","phone"),
-    -- (NULL, "iPhone 14", 2479.00, "Space Black", "1TB","phone");
-
-
 
 

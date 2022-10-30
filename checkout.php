@@ -44,7 +44,7 @@ function displayEmpty()
 				<input type="search" class="search-form" id="search-box" placeholder="search here...">
 				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php">
-					<div class="fas fa-shopping-cart" id="cart-btn">
+					<div class="fas fa-shopping-cart" id="cart-btn" style="color: #bc96c6;">
 						<?php
 						$total = 0;
 						if(isset($_SESSION['cart']))
