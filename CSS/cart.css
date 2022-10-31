@@ -130,3 +130,7 @@ footer {
     padding: 15px 0;
     color: white;
 }
+
+input {
+    margin-top: 10px;
+}

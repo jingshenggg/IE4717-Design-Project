@@ -52,25 +52,6 @@ function displayEmpty()
                 <li><a href="smartwatch.php">Smartwatch</a></li>
                 <li><a href="case.php">Case</a></li>
             </ul>
-            <div class="icon" style="padding-right: 100px">
-                <a href="cart.php">
-                    <div class="fas fa-shopping-cart" id="cart-btn" style="color: #bc96c6;">
-                        <?php
-                        $total = 0;
-                        if (isset($_SESSION['cart'])) {
-                            for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                                if ($_SESSION['cart'][$i] > 0) {
-                                    $total += $_SESSION['cart'][$i];
-                                }
-                            }
-                        }
-
-                        echo $total;
-                        // clear session ?
-                        ?>
-                    </div>
-                </a>
-            </div>
         </div>
     </nav>
     <main style="padding-bottom: 100px;">
@@ -147,8 +128,13 @@ function displayEmpty()
     $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
 
     mail($to, $subject, $message, $headers, '-ff32ee@localhost');
-    echo ("mail sent to : " . $to);
+    unset($_SESSION['cart']);
+    session_destroy();
+
+
+
     ?>
+    
     
 </body>
 

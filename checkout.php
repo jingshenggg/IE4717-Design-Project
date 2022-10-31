@@ -160,22 +160,24 @@ function displayEmpty()
 					You will get a confirmation e-mail once we receive the order!
 				</p>
 				<form method="post" action="confirm_order.php" onsubmit="return validateForm('order');">
-					<label for="firstname" class="label_jobapplication">First name*: </label><input class="input_jobapplication" name="firstname" id="firstname" type="text" placeholder="First name" required><br>
-					<label for="lastname" class="label_jobapplication">Last name*: </label><input class="input_jobapplication" name="lastname" id="lastname" type="text" placeholder="Last name" required><br>
-					<label for="email" class="label_jobapplication">E-mail*: </label><input class="input_jobapplication" name="email" id="email" type="email" placeholder="E-mail address" required><br>
-					<label for="streetaddress" class="label_jobapplication">Street address*: </label><input class="input_jobapplication" name="streetaddress" id="streetaddress" type="text" placeholder="Street address" required><br>
-					<label for="zipcode" class="label_jobapplication">Postal code*: </label><input class="input_jobapplication" name="zipcode" id="zipcode" type="text" placeholder="Postal code" required><br>
-					<label for="additional_info" class="label_jobapplication">Additional info: </label><textarea class="input_jobapplication" id="additional_info" rows="4" cols="40" placeholder="Additional info"></textarea><br>
-					<label for="payment" class="label_jobapplication">Payment*: </label>
+					<label for="firstname" >First name*: </label><input class="input_jobapplication" name="firstname" id="firstname" type="text" placeholder="First name" required><br>
+					<label for="lastname" >Last name*: </label><input class="input_jobapplication" name="lastname" id="lastname" type="text" placeholder="Last name" required><br>
+					<label for="email" >E-mail*: </label><input class="input_jobapplication" name="email" id="email" type="email" placeholder="E-mail address" required><br>
+					<label for="streetaddress" >Street address*: </label><input class="input_jobapplication" name="streetaddress" id="streetaddress" type="text" placeholder="Street address" required><br>
+					<label for="zipcode" >Postal code*: </label><input class="input_jobapplication" name="zipcode" id="zipcode" type="text" placeholder="Postal code" required><br>
+					
+					<div class="payment_selection" style="padding-top:10px;"></div>
+					<label for="payment" >Payment*: </label>
 					<select class="input_jobapplication" name='payment_method' required onchange="displayCreditcardInfo()">
 						<option selected>Choose here</option>
 						<option value="cash">Cash</option>
 						<option id="creditcard" value='creditcard'>Credit card</option>
 						<option value="invoice">Invoice</option>
 					</select><br>
-					<label for="creditcard_number" class="label_jobapplication" id="creditcard_number_label"></label>
+					</div>
+					<label for="creditcard_number"  id="creditcard_number_label"></label>
 					<input name="creditcard_number" id="creditcard_number" placeholder="Creditcard number" type="hidden"><br>
-					<label for="cvc_number" class="label_jobapplication" id="cvc_number_label"></label>
+					<label for="cvc_number"  id="cvc_number_label"></label>
 					<input id="cvc_number" placeholder="CVC" type="hidden"><br>
 					<br><br>
 					<form action="confirm_order.php"><input type="submit" value="Confirm order" class="btn" style="color: white;"/></form>
