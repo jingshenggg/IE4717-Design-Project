@@ -1,17 +1,6 @@
 CREATE DATABASE IF NOT EXISTS shop;
 USE shop;
 
--- SELECT "Dropping tables" AS MESSAGE;
--- SET FOREIGN_KEY_CHECKS = 0;
--- -- DROP TABLE IF EXISTS all_products;
--- -- DROP TABLE IF EXISTS phone;
--- -- DROP TABLE IF EXISTS airpod;
--- -- DROP TABLE IF EXISTS smartwatch;
--- DROP TABLE IF EXISTS case1;
--- SET FOREIGN_KEY_CHECKS = 1;
-
--- SELECT "Creating new tables" AS MESSAGE;
-
 CREATE TABLE product (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(40) NOT NULL,
@@ -25,8 +14,7 @@ CREATE TABLE product_detail (
     constraint `fk_productid`
         foreign key (product_id) references product(id)
         on delete cascade
-        on update restrict
-    
+        on update restrict 
 );
 
 
