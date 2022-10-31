@@ -87,12 +87,64 @@ function displayEmpty()
         <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
     </footer>
     <?php
-    $to      = 'f32ee@localhost';
-    $subject = 'the subject';
-    $message = 'Dear buyer, thank you for your purschase. Below is a receipt of your order.';
+    $to      = 'f31ee@localhost';
+    $subject = 'Purchase Confirmation';
+    $message = 'Dear buyer, thank you for your purschase. Below is a receipt of your order.<br /><br/>';
+    $message .= "<table align='center' border='1'>";
+    $message .= "<thead>";
+    $message .= "<tr>";
+    $message .= "<th>Item</th>";
+    $message .= "<th>Quantity</th>";
+    $message .= "<th>Unit Price</th>";
+    $message .= "</tr>";
+    $message .= "</thead>";
+    $message .= "<tbody>";
+
+    $total = 0;
+	$sql = "SELECT * FROM product_detail";
+	$result = mysqli_query($conn, $sql);
+	$num_of_productdetail = $result->num_rows;
+					
+    for ($i = 0; $i < $num_of_productdetail; $i++) {
+        if (isset($_SESSION['cart'])) {
+            if ($_SESSION['cart'][$i] > 0) {
+
+                $product_detailquery = "SELECT * FROM product_detail WHERE id=" . ($i + 1) . "";
+                $productdetail = mysqli_query($conn, $product_detailquery);
+                if ($productdetail->num_rows > 0) {
+                    $cart = $productdetail->fetch_assoc();
+                }
+                $product_query = "SELECT * FROM product WHERE id=" . $cart['product_id'] . "";
+                $product = mysqli_query($conn, $product_query);
+                if ($product->num_rows > 0) {
+                    $item = $product->fetch_assoc();
+                }
+
+                $message .= "<tr>";
+                if (!$cart['product_capacity'] == null) {
+                    $message .= "<td align='center'>" . $item['product_name'] . "(" . $cart['product_capacity'] . ")</td>";
+                } else {
+                    $message .= "<td align='center'>" . $item['product_name'] . "</td>";
+                }
+                $message .= "<td align='center'>" . $_SESSION["cart"][$i] . "</td>";
+                $message .= "<td align='center'>$" . $cart['product_price'] . "</td>";
+                $message .= "</tr>";
+                $total = $total + (float)$cart['product_price'] * (int)$_SESSION['cart'][$i];
+            }
+        }
+    }
+    $message .= "<tr>";
+    $message .= "<td colspan=2 align='left' style='text-align:center';padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+    $message .= "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px;'>$" . number_format($total, 2) . "</td>";
+    $message .= "</tr>";
+    $message .= "</tbody>";
+    $message .= "</table>";
+
     $headers = 'From: f31ee@localhost' . "\r\n" .
         'Reply-To: f32ee@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
+    $headers .= "MIME-Version: 1.0"."\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
 
     mail($to, $subject, $message, $headers, '-ff32ee@localhost');
     echo ("mail sent to : " . $to);

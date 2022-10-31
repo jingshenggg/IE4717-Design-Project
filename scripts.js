@@ -32,9 +32,6 @@ function validateForm(form_name){
         if(!validateName()){
             alert("Invalid name input.");
             return false;
-        } else if(!validateEmail()){
-            alert("Invalid email input.");
-            return false;
         } else if(!validateAddress()){
             alert("Invalid address input.");
             return false;
