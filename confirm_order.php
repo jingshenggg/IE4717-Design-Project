@@ -64,7 +64,7 @@ function displayEmpty()
         <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
     </footer>
     <?php
-    $to      = 'f32ee@localhost';
+    $to = $_POST['email'];
     $subject = 'Purchase Confirmation';
     $message = 'Dear buyer, you have successfully made a purschase with Phones & Accessories Hub. Below is a receipt of your order.<br /><br/>';
     $message .= "<table align='center' border='1' width='80%'>";
