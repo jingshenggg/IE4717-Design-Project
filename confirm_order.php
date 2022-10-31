@@ -64,9 +64,9 @@ function displayEmpty()
         <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
     </footer>
     <?php
-    $to      = 'f31ee@localhost';
+    $to      = 'f32ee@localhost';
     $subject = 'Purchase Confirmation';
-    $message = 'Dear buyer, thank you for your purschase. Below is a receipt of your order.<br /><br/>';
+    $message = 'Dear buyer, you have successfully made a purschase with Phones & Accessories Hub. Below is a receipt of your order.<br /><br/>';
     $message .= "<table align='center' border='1' width='80%'>";
     $message .= "<thead>";
     $message .= "<tr>";
@@ -116,6 +116,8 @@ function displayEmpty()
     $message .= "</tr>";
     $message .= "</tbody>";
     $message .= "</table>";
+    $message .= "<p>Thank you for the purchase!</p>";
+   
 
     $headers = 'From: f31ee@localhost' . "\r\n" .
         'Reply-To: f32ee@localhost' . "\r\n" .
@@ -125,13 +127,9 @@ function displayEmpty()
 
     mail($to, $subject, $message, $headers, '-ff32ee@localhost');
     unset($_SESSION['cart']);
+    
+    // destroy session
     session_destroy();
-
-
-
-    ?>
-    
-    
+    ?> 
 </body>
-
 </html>
