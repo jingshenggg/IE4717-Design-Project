@@ -1,5 +1,5 @@
--- CREATE DATABASE IF NOT EXISTS shop;
--- USE shop;
+CREATE DATABASE IF NOT EXISTS shop;
+USE shop;
 
 -- SELECT "Dropping tables" AS MESSAGE;
 -- SET FOREIGN_KEY_CHECKS = 0;
@@ -46,7 +46,7 @@ INSERT INTO product (id, product_name, product_type)
     (NULL, "iPhone 14 Pro","phone"),
     (NULL, "iPhone 14 Pro Max","phone"),
     (NULL, "iPhone 14","phone"),
-    (NULL, "iPhone 14 Max","phone")
+    (NULL, "iPhone 14 Max","phone");
 
 
 INSERT INTO product_detail (id, product_price, product_capacity,product_id)
@@ -81,7 +81,7 @@ INSERT INTO product_detail (id, product_price, product_capacity,product_id)
     (NULL, 1669.00, "128GB", 16),
     (NULL, 1819.00, "256GB", 16),
     (NULL, 1999.00, "512GB", 16),
-    (NULL, 2479.00, "1TB", 16)
+    (NULL, 2479.00, "1TB", 16);
     
 
 

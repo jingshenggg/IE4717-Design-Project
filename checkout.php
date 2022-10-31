@@ -1,3 +1,5 @@
+<!-- checkout page for customers to fill in details -->
+
 <?php
 include "db_connect.php";
 session_start();

@@ -1,3 +1,5 @@
+<!-- to send email to customers -->
+
 <?php
 include "db_connect.php";
 session_start();

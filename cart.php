@@ -1,3 +1,5 @@
+<!-- cart to show customers what they have ordered -->
+
 <?php
 include "db_connect.php";
 session_start();
