@@ -109,7 +109,7 @@ function displayEmpty()
         }
     }
     $message .= "<tr>";
-    $message .= "<td colspan=2 align='left' style='text-align:center';padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+    $message .= "<td colspan=2 align='left' style='text-align:center';padding-top:10px;font-size:20px; font-weight:bold;'>Total price: </td>";
     $message .= "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px;'>$" . number_format($total, 2) . "</td>";
     $message .= "</tr>";
     $message .= "</tbody>";

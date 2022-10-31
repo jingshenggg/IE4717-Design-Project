@@ -158,7 +158,7 @@ function displayEmpty()
 
 					 }
 					echo "<tr>";
-					echo "<td colspan=2 align='left' style='text-align:center;padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+					echo "<td colspan=2 align='left' style='text-align:center;padding-top:10px;font-size:20px; font-weight:bold;'>Total price: </td>";
 					echo "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px'>$" . number_format($total, 2) . "</td>";
 					echo "</tr>";
 					?>
