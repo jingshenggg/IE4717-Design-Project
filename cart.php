@@ -17,7 +17,7 @@ if (isset($_GET['minus'])) {
 function displayEmpty()
 {
 	echo "<div class='contshop'>";
-	echo "<form action='index.php'><input type='submit' value='Continue shopping' class='btn'/></form>";
+	echo "<form action='index.php'><input type='submit' value='Continue shopping' class='btn' style='color: white;'/></form>";
 	echo "</div>";
 	echo "<br>";
 	echo "<br>";
@@ -160,7 +160,7 @@ function displayEmpty()
 
 					 }
 					echo "<tr>";
-					echo "<td colspan=2 align='left' style='padding-left:80px;padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+					echo "<td colspan=2 align='left' style='text-align:center;padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
 					echo "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px'>$" . number_format($total, 2) . "</td>";
 					echo "</tr>";
 					?>
@@ -170,8 +170,9 @@ function displayEmpty()
 			<br/>
 			<br/>
 			</div>
-			<p class="centeredparagraph"><a href="checkout.php" class="cc_links" style="margin-right:13%;">Continue to checkout</a>
+			<p class="centeredparagraph"><form action="checkout.php"><input type="submit" value="Continue to check out" class="btn" style="color: white;"/></form>
 				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
+				<!-- cannot change to button -->
 			</p>
 		</div>
 	</main>

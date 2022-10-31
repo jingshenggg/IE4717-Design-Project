@@ -68,6 +68,7 @@ function displayEmpty()
                         }
 
                         echo $total;
+                        // clear session ?
                         ?>
                     </div>
                 </a>
@@ -80,13 +81,25 @@ function displayEmpty()
         <br>
         <br>
         <div class="contshop">
-            <form action="index.php"><input type="submit" value="Continue shopping" class="btn"/></form>
+            <form action="index.php"><input type="submit" value="Continue shopping" class="btn" /></form>
         </div>
     </main>
     <footer>
         <small><i>Copyright &copy; Phones & Accessories Hub</i></small>
         <br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
     </footer>
+    <?php
+    $to      = 'f32ee@localhost';
+    $subject = 'the subject';
+    $message = 'Dear buyer, thank you for your purschase. Below is a receipt of your order.';
+    $headers = 'From: f31ee@localhost' . "\r\n" .
+        'Reply-To: f32ee@localhost' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers, '-ff32ee@localhost');
+    echo ("mail sent to : " . $to);
+    ?>
+    
 </body>
 
 </html>

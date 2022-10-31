@@ -10,7 +10,7 @@ if (isset($_GET['empty'])) {
 
 function displayEmpty()
 {
-	echo "<p class='centeredparagraph'><button class='btn'><a href='index.php' class='cc_empty_links'>Continue shopping</a></button>";
+	echo "<p class='centeredparagraph'><form action='index.php'><input type='submit' value='Continue shopping' class='btn' style='color: white;'/></form>";
 	echo '<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
 		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
@@ -135,7 +135,7 @@ function displayEmpty()
 						}
 					}
 					echo "<tr>";
-					echo "<td colspan=2 align='left' style='padding-left:80px;padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
+					echo "<td colspan=2 align='left' style='text-align:center';padding-top:10px;font-size:20px; font-weight:bold;'>Total price </td>";
 					echo "<td align='center' style='font-size:20px;font-weight:bold;padding-top:10px;'>$" . number_format($total, 2) . "</td>";
 					echo "</tr>";
 					?>
@@ -143,7 +143,7 @@ function displayEmpty()
 			</table>
 			<br />
 			<br />
-			<p class="centeredparagraph"><a href="index.php" class="cc_links" style="margin-right:14%;">Continue shopping</a>
+			<p class="centeredparagraph"><form action="index.php"><input type="submit" value="Continue shopping" class="btn" style="color: white;"/></form>
 				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
 			</p>
 			<div>
@@ -174,7 +174,7 @@ function displayEmpty()
 					<label for="cvc_number" class="label_jobapplication" id="cvc_number_label"></label>
 					<input id="cvc_number" placeholder="CVC" type="hidden"><br>
 					<br><br>
-					<span class=''><input class="submit_jobapplication" type="submit" value="Confirm order"></span>
+					<form action="confirm_order.php"><input type="submit" value="Confirm order" class="btn" style="color: white;"/></form>
 					<script src="scripts.js"></script>
 				</form>
 			</div>

@@ -76,12 +76,6 @@ header {
     color: #bc96c6;
 }
 
-footer {
-    background-color: #bc96c6;
-    text-align: center;
-    padding: 15px 0;
-}
-
 body {
     font-family: Arial;
 }
@@ -116,4 +110,23 @@ main {
 
 .contshop {
     text-align: center;
+}
+
+.cc_table, tr, td {
+    border: 1px solid;
+}
+
+.cc_table {
+    width: 80%;
+}
+
+.centeredparagraph {
+    font-size: large;
+}
+
+footer {
+    background-color: #bc96c6;
+    text-align: center;
+    padding: 15px 0;
+    color: white;
 }

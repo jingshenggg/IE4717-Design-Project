@@ -107,12 +107,14 @@ img {
       
 }
 
+body {
+    font-family: Arial;
+}
+
 footer {
     background-color: #bc96c6;
     text-align: center;
     padding: 15px 0;
+    color: white;
 }
 
-body {
-    font-family: Arial;
-}
