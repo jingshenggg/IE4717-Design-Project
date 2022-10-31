@@ -11,6 +11,10 @@ if (isset($_GET['empty'])) {
 function displayEmpty()
 {
 	echo "<p class='centeredparagraph'><form action='index.php'><input type='submit' value='Continue shopping' class='btn' style='color: white;'/></form>";
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	echo '<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
 		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>

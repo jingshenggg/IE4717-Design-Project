@@ -53,8 +53,6 @@ function displayEmpty()
                 <li><a href="case.php">Case</a></li>
             </ul>
             <div class="icon" style="padding-right: 100px">
-                <input type="search" class="search-form" id="search-box" placeholder="search here...">
-                <label for="search-box" class="fas fa-search"></label>
                 <a href="cart.php">
                     <div class="fas fa-shopping-cart" id="cart-btn" style="color: #bc96c6;">
                         <?php
@@ -77,11 +75,11 @@ function displayEmpty()
     </nav>
     <main style="padding-bottom: 100px;">
         <h1>Thank you!</h1>
-        <h2>Have a nice day!</h2>
+        <p>We have sent a confirmation e-mail of your purchase to your e-mail address. Have a nice day!</p>
         <br>
         <br>
         <div class="contshop">
-            <form action="index.php"><input type="submit" value="Continue shopping" class="btn" /></form>
+            <form action="index.php"><input type="submit" value="Continue shopping" class="btn" style="color: white;"/></form>
         </div>
     </main>
     <footer>

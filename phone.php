@@ -30,8 +30,6 @@ session_start();
           <li><a href="case.php">Case</a></li>
         </ul>
         <div class="icon" style="padding-right: 100px">
-          <input type="search" class="search-form" id="search-box" placeholder="search here...">
-          <label for="search-box" class="fas fa-search"></label>
           <a href="cart.php">
             <div class="fas fa-shopping-cart" id="cart-btn">
             <?php

@@ -26,8 +26,6 @@ include "setup_session.php";
 			</ul>
 			<div class="icon" style="padding-right: 100px">
 				<!--search bar still required to edit-->
-				<input type="search" class="search-form" id="search-box" placeholder="search here...">
-				<label for="search-box" class="fas fa-search"></label>
 				<a href="cart.php">
 					<div class="fas fa-shopping-cart" id="cart-btn">
 						<?php

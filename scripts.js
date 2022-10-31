@@ -78,7 +78,8 @@ function validateEmail() {
 
 function validateAddress(){
     var address = document.getElementById('streetaddress').value;
-    var address_regex = /^\d{1,5}([\s\D]){1,}\s\d{1,5}$/;
+    var address_regex = /^\d{1,4}([\s\D]){1,}\s\d{1,5}$/;
+    // regex for address?
 
     return validateRegEx(address_regex, address);
 }
