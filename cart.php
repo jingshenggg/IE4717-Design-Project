@@ -169,8 +169,7 @@ function displayEmpty()
 			<br/>
 			</div>
 			<p class="centeredparagraph"><form action="checkout.php"><input type="submit" value="Continue to check out" class="btn" style="color: white;"/></form>
-				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
-				<!-- cannot change to button -->
+				<button onclick="clearCart()" class="btn" style="color:white;">Empty your cart</button>
 			</p>
 		</div>
 	</main>
@@ -179,5 +178,5 @@ function displayEmpty()
 		<br><i><a href="mailto:jingsheng@tey.com">jingsheng@tey.com</a></i>
 	</footer>
 </body>
-
+<script src="scripts.js"></script>
 </html>

@@ -7,12 +7,6 @@ if (isset($_GET['empty'])) {
     header('location: ' . $_SERVER['PHP_SELF']);
     exit();
 }
-if (isset($_GET['plus'])) {
-    $_SESSION['cart'][$_GET['plus']]++;
-}
-if (isset($_GET['minus'])) {
-    $_SESSION['cart'][$_GET['minus']]--;
-}
 
 function displayEmpty()
 {
@@ -71,7 +65,7 @@ function displayEmpty()
     $to      = 'f31ee@localhost';
     $subject = 'Purchase Confirmation';
     $message = 'Dear buyer, thank you for your purschase. Below is a receipt of your order.<br /><br/>';
-    $message .= "<table align='center' border='1'>";
+    $message .= "<table align='center' border='1' width='80%'>";
     $message .= "<thead>";
     $message .= "<tr>";
     $message .= "<th>Item</th>";

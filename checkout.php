@@ -148,7 +148,7 @@ function displayEmpty()
 			<br />
 			<br />
 			<p class="centeredparagraph"><form action="index.php"><input type="submit" value="Continue shopping" class="btn" style="color: white;"/></form>
-				<a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1" class="cc_links">Empty your cart</a>
+				<button onclick="clear_Cart()" class="btn" style="color:white;">Empty your cart</button>
 			</p>
 			<div>
 				<br />

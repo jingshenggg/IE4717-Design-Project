@@ -32,9 +32,6 @@ function validateForm(form_name){
         if(!validateName()){
             alert("Invalid name input.");
             return false;
-        } else if(!validateAddress()){
-            alert("Invalid address input.");
-            return false;
         } else if(!validateZipcode()){
             alert("Invalid zipcode input.");
             return false;
@@ -64,21 +61,6 @@ function validateName() {
     var last_name_string = document.getElementById('lastname').value;
     var name_regex = /^[A-Za-z\s]*$/;
     return (validateRegEx(name_regex, first_name_string) && validateRegEx(name_regex, last_name_string));
-}
-
-function validateEmail() {
-    var email_string = document.getElementById('email').value;
-    var email_regex = /^[a-zA-Z]{1}\w+(\.\w+[@]|[@]).*\.[a-z]{2,3}$/;
-
-    return validateRegEx(email_regex, email_string);
-}
-
-function validateAddress(){
-    var address = document.getElementById('streetaddress').value;
-    var address_regex = /^\d{1,4}([\s\D]){1,}\s\d{1,5}$/;
-    // regex for address?
-
-    return validateRegEx(address_regex, address);
 }
 
 function validateZipcode() {
@@ -117,4 +99,13 @@ function validateDate() {
         return false;
     }
     return true;
+}
+
+// button to empty cart, each button for different php page.
+function clearCart() {
+    window.location.href = "cart.php?empty=1";
+}
+
+function clear_Cart() {
+    window.location.href = "checkout.php?empty=1";
 }
