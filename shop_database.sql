@@ -3,7 +3,7 @@ USE shop;
 
 CREATE TABLE product (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(40) NOT NULL,
+    product_name VARCHAR(60) NOT NULL,
     product_type VARCHAR(40)
 );
 CREATE TABLE product_detail (
