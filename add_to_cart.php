@@ -42,8 +42,6 @@ else{
     header("location:../IE4717-Design-Project/smartwatch.php");
 }
 
-
-
 ?>
 
 

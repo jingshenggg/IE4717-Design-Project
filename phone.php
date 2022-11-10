@@ -129,10 +129,7 @@ session_start();
                   echo  "</div>";
 
                 }
-
-          
           ?>
-
       </div>
     </main>
 
@@ -159,6 +156,4 @@ session_start();
         }
     </script>
   </body>
-
-
 </html>

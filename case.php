@@ -96,8 +96,6 @@ include "setup_session.php";
           echo "</div>";
         }
       ?>
-
-
     </div>
   </main>
   <footer>

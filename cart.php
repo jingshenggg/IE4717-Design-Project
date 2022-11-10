@@ -28,7 +28,7 @@ function displayEmpty()
 	echo "<footer>
 		<small><i>Copyright &copy; Phones & Accessories Hub</i></small>
 		<br><i><a href='mailto:jingsheng@tey.com'>jingsheng@tey.com</a></i>
-	 	 </footer>";
+	 	 </footer>"; 
 }
 ?>
 

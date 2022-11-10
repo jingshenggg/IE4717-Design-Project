@@ -30,17 +30,17 @@ function validateForm(form_name){
 
     if(form_name === 'order'){
         if(!validateName()){
-            alert("Invalid name input.");
+            alert("Invalid name input. Please enter only alphabets.");
             return false;
         } else if(!validateZipcode()){
-            alert("Invalid zipcode input.");
+            alert("Invalid postal code input. Please enter only 6 digits.");
             return false;
         } else if(document.getElementById('creditcard').selected) {
             if (!validateCreditcardNumber()) {
-                alert("Invalid credit card number.");
+                alert("Invalid credit card number. Pleas enter only 16 digits of the credit card.");
                 return false;
             } else if (!validateCvcNumber()) {
-                alert("Invalid cvc number.");
+                alert("Invalid cvc number. Please enter only 3 digits of the CVC number.");
                 return false;
             }
         }
@@ -82,23 +82,6 @@ function validateCvcNumber(){
     var cvc_number_regex = /^\d{3}$/;
 
     return validateRegEx(cvc_number_regex, cvc_number);
-}
-
-function validateDate() {
-    var date = document.getElementById('date').value;
-    var today = new Date();
-
-    if ( (date.getFullYear() < today.getFullYear())
-        || (date.getFullYear() === today.getFullYear())
-        && date.getMonth() < today.getMonth()
-        || (date.getFullYear() === today.getFullYear())
-        && date.getMonth() === today.getMonth()
-        && date.getDay() <= today.getDay())
-    {
-        alert('Invalid date');
-        return false;
-    }
-    return true;
 }
 
 // button to empty cart, each button for different php page.
